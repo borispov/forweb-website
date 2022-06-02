@@ -150,4 +150,17 @@
     background-position: 60% 80%, 0 100%;
     background-repeat: no-repeat;
   }
+
+  .space-top {
+    padding-top: 6em;
+  }
+}
+
+
+
+.processes {
+  position: relative;
+  background-image: url('https://uploads-ssl.webflow.com/628a23f009b48ad83558d6d4/628a7a6d521f0378b1fd9d64_Hero__noise_bg.png'), inear-gradient(135deg, #ffc532, rgba(255, 197, 49, 0.9));
+  background-position: 0px 0px, 0px 0px;
+  background-size: auto, auto;
 }

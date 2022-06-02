@@ -4,8 +4,8 @@ import Head from 'next/head'
 import Hero from '@/components/Hero'
 import Header from '@/components/layout/Header'
 import Layout from '@/components/layout/Layout'
-import ServicesSection from '@/components/services/ServicesSection'
 import ProcessSection from '@/components/process/ProcessSection'
+import ServicesSection from '@/components/services/ServicesSection'
 
 
 const Home: NextPage = () => {
