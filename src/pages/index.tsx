@@ -5,6 +5,8 @@ import Hero from '@/components/Hero'
 import Header from '@/components/layout/Header'
 import Layout from '@/components/layout/Layout'
 import ServicesSection from '@/components/services/ServicesSection'
+import ProcessSection from '@/components/process/ProcessSection'
+
 
 const Home: NextPage = () => {
   return (
@@ -65,6 +67,7 @@ const Home: NextPage = () => {
       </section>
 
     <ServicesSection />
+    <ProcessSection />
 
     </Layout>
   )

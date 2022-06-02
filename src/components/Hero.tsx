@@ -10,7 +10,7 @@ function Hero() {
       </h1>
       <h4 className="lg:text-2xl sm:text-2xl max-w-xl mx-auto pt-6">{HeroSectionData.subtitle}</h4>
       <div className="button__wrapper pt-12">
-        <button className="primary-button text-4xl rounded-full shadow-sm hover:bg-primary-400 hover:shadow-md transition-all">
+        <button className="primary-button text-4xl rounded-full shadow-md hover:shadow-lg hover:bg-primary-400 transition-all">
           {HeroSectionData.cta_text}
         </button>
       </div>
