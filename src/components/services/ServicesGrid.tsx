@@ -1,15 +1,16 @@
-import Image from 'next/image';
 import * as React from 'react';
+
+import clsxm from "../../lib/clsxm";
 
 //TODO: Style THe Grid and Grid-items!
 //TODO2: Make them responsive!
 interface BenefitCard {
   title: string,
   text: string,
-  iconPath: string,
+  iconPath?: string,
 }
 
-const benefitsCards:BenefitCard[] = [
+const servicesCards:BenefitCard[] = [
   {
     title: "עיצוב",
     text: "תהליך עיצוב UI/UX בהתאם לחזון, ערכי המותג והאישיות שלכם. תהליך עיצוב ייחודי שנמשך עד לשביעות רצונכם",
@@ -39,15 +40,20 @@ const benefitsCards:BenefitCard[] = [
   
 ]
 
-export default function BenefitsGrid() {
+export default function ServicesGrid() {
+
   return (
-    <div className="grid">
+    <div className="grid gap-2 grid-cols-2">
       {
-        benefitsCards.map(benefit => (
-          <div className="grid-item" key={benefit.title}>
-            <Image src={benefit.iconPath} alt={benefit.title} />
-            <h2>{benefit.title}</h2>
-            <h4>{benefit.text}</h4>
+        servicesCards.map((benefit) => (
+          <div 
+          className={clsxm(
+            `bg-gradient-to-b from-primary-100 via-primary-400/15 to-primary-100 rounded-lg max-w-sm p-8`,
+          )}
+            key={benefit.title}>
+            {/* <Image src={benefit.iconPath} alt={benefit.title} /> */}
+            <h4>{benefit.title}</h4>
+            <p>{benefit.text}</p>
           </div>
         ))
       }
