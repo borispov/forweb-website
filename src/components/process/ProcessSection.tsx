@@ -5,23 +5,31 @@ const state = [
   {
     title: 'שלב אפיון וגילוי',
     subtitle: 'מיפוי צרכי העסק',
-    description: 'בשלב זה אנו עורכים פגישה לאיסוף נתונים והבנתם ותכנון התכנית'
+    description: 'בשלב זה אנו עורכים פגישה לאיסוף נתונים והבנתם ותכנון התכנית',
+    stepNumber: 1,
   },
   {
     title: 'שלב אפיון וגילוי',
     subtitle: 'מיפוי צרכי העסק',
-    description: 'בשלב זה אנו עורכים פגישה לאיסוף נתונים והבנתם ותכנון התכנית'
+    description: 'בשלב זה אנו עורכים פגישה לאיסוף נתונים והבנתם ותכנון התכנית',
+    stepNumber: 2,
   },
 ]
 
-interface ProcessItem {
+interface IProcessItem {
   title: string;
   subtitle: string;
   description: string;
   icon?: string;
+  stepNumber: number;
 }
 
-export function ProcessItem<ProcessItem>(item) {
+interface ProcessItemProps {
+  item: IProcessItem,
+  children?: React.ReactNode,
+}
+
+export function ProcessItem<ProcessItemProps>({ item }) {
   return (
     <div className="bg-primary-300 max-w-2xl flex border-2 border-black shadow-lg">
       <div className="w-1/5 ">
@@ -35,12 +43,6 @@ export function ProcessItem<ProcessItem>(item) {
   )
 }
 
-export function Processes(items:ProcessItem[]) {
-  return ( {
-    items.map(item => (<ProcessItem item={item} key={item.stepNumber} />))
-  })
-}
-
 export default function ProcessSection() {
   return (
     <div className="container">
@@ -52,7 +54,11 @@ export default function ProcessSection() {
       <h4 className="text-2xl">
         קצר, פשוט ויעיל
       </h4>
+      {
+        state.map((element:IProcess, i) => (
+          <ProcessItem item={element} key={i} />
+        ))
+      }
     </div>
-    <Processes items={state}/>
   )
 }
