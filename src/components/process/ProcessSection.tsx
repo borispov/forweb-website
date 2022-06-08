@@ -61,24 +61,26 @@ function ProcessItem({ item }: ProcessItemProps) {
 
 export default function ProcessSection() {
   return (
-    <div className="container processes">
-      <h3 className="text-3xl">
-        לתת לעסק שלך לצמוח עם
-        <br/>
-        5 שלבים פשוטים
-      </h3>
-      <h4 className="text-2xl">
-        קצר, פשוט ויעיל
-      </h4>
-      <div className="md:w-6/12 sm:w-4/5 mx-auto mt-12">
-        { 
-          state.map((proc, i) => <ProcessItem item={proc} key={i} /> )
-        }
-      </div>
+    <div className="processes">
+      <div className="container text-center pt-24">
+        <h1 className="text-4xl">
+          לתת לעסק שלך לצמוח עם
+          <br/>
+          5 שלבים פשוטים
+        </h1>
+        <h2 className="text-2xl font-normal">
+          קצר, פשוט ויעיל
+        </h2>
+        <div className="md:w-6/12 sm:w-4/5 mx-auto mt-12">
+          { 
+            state.map((proc, i) => <ProcessItem item={proc} key={i} /> )
+          }
+        </div>
 
-      <h3 className="mt-12 mx-auto">
-        וזכרו כי אנו אתכם בכל שלב
-      </h3>
+        <h3 className="mt-12 mx-auto">
+          וזכרו כי אנו אתכם בכל שלב
+        </h3>
+      </div>
     </div>
   )
 };

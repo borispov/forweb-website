@@ -40,12 +40,26 @@ const servicesCards:BenefitCard[] = [
   
 ]
 
+
+const easyServices = [
+  ['אפיון וייעוץ', 'מותאמים לעסק'],
+  ['עיצוב', 'בהתאם לקוי העסק המותג והאישיות'],
+  ['אתרים', 'שמרגישים כמו בית'],
+  ['חנויות e-commerce', 'יפות ומוכרות'],
+  ['אפליקציות Web', 'בטכנולוגיות מתקדמות'],
+  ['שיווק', 'עם תוצאות!'],
+  ['מודעות דיגיטליות', 'שלא משאירות אף עין אדישה'],
+  ['אימייל מרקטינג', 'כי פשוט פרייאר מי שלא מנצל את זה'],
+]
+
 export default function ServicesGrid() {
 
+  const oldVar = false;
+
   return (
-    <div className="grid gap-2 grid-cols-2">
+    <div className="pb-12 p-6 pr-10 mt-16 bg-primary-300 rounded-lg w-1/2">
       {
-        servicesCards.map((benefit) => (
+        oldVar && servicesCards.map((benefit) => (
           <div 
           className={clsxm(
             `bg-gradient-to-b from-primary-100 via-primary-400/15 to-primary-100 rounded-lg max-w-sm p-8`,
@@ -55,7 +69,16 @@ export default function ServicesGrid() {
             <h4>{benefit.title}</h4>
             <p>{benefit.text}</p>
           </div>
-        ))
+        )) || easyServices.map((service, i) => {
+          return (
+            <div key={i} className="text-lg leading-loose">
+              <strong>{service[0] + ' '}</strong>
+              <span className="text-lg font-normal">
+                {service[1]}
+              </span>
+            </div>
+          )
+        })
       }
     </div>
   )

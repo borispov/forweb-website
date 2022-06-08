@@ -7,7 +7,7 @@
   --tw-color-primary-50: 255 247 237;
   --tw-color-primary-100: 255 237 213;
   --tw-color-primary-200: 254 215 170;
-  --tw-color-primary-300: 253 186 116;
+  --tw-color-primary-300: 253 196 50;
   --tw-color-primary-400: 251 146 60;
   --tw-color-primary-500: 249 115 22;
   --tw-color-primary-600: 234 88 12;
@@ -34,6 +34,7 @@
   --unique-shadow-box-2: 6px 6px 2px 0px #6f581c;
   --unique-shadow-box-3: 6px 6px 2px 0px #6f581c;
   /* #endregion  /**======== Primary Color =========== */
+  --noise-bg: url('/groovepaper.png');
 }
 
 @layer base {
@@ -73,7 +74,11 @@
   }
   /* #endregion  /**======== Typography =========== */
 
-  .layout {
+  .space-x {
+    @apply sm:px-4 md:px-6 lg:px-16
+  }
+
+  .container {
     /* 1100px */
     max-width: 68.75rem;
     @apply mx-auto w-11/12;
@@ -116,9 +121,23 @@
   .base-shadow {
     box-shadow: 8px 8px 0 0 rgba(13,13,13,0.90);
   }
+
+
   .primary-button {
     @apply py-2 px-14 text-center font-bold border-2 border-black;
     /* box-shadow: 4px 4px 2px 0 #494949; */
+  }
+
+  .button-hover-sm {
+    @apply hover:-translate-y-1 hover:shadow-lg transition-all ease-in ;
+  }
+
+  .button-hover-lg {
+    @apply hover:-translate-y-1 hover:shadow-xl transition-all ease-in hover:shadow-gray-300;
+  }
+
+  .black-button {
+    @apply primary-button border-none shadow-lg text-2xl shadow-gray-300 py-6 px-16 text-white;
   }
 
   .unique1-shadow {
@@ -154,13 +173,74 @@
   .space-top {
     padding-top: 6em;
   }
+  
+  .space-y {
+    @apply sm:py-8 md:py-12 lg:py-24
+  }
+
+  .noise-bg-with-color {
+    background-image: 
+      linear-gradient(180deg, var(--color-primary-300), #f9f9f9),
+      url('/groovepaper.png');
+  }
+
+  .noise-bg {
+    background-image: url('/groovepaper.png');
+  }
 }
 
 
+.services {
+  background: linear-gradient(180deg, rgba(255, 182, 175, 0) 0%, #FFFFFF 100%);
+  @apply noise-bg;
+}
+
+.pricings {
+  position: relative;
+  /* background-image: 
+    linear-gradient(180deg, #fbe8de, #fff),
+    url('/groovepaper.png'); */
+  @apply noise-bg-with-color;
+  background-position: 0px 0px, 0px 0px;
+  background-size: auto, auto;
+  @apply space-top pb-24;
+}
 
 .processes {
   position: relative;
-  background-image: url('https://uploads-ssl.webflow.com/628a23f009b48ad83558d6d4/628a7a6d521f0378b1fd9d64_Hero__noise_bg.png'), inear-gradient(135deg, #ffc532, rgba(255, 197, 49, 0.9));
+  background-image: url('https://uploads-ssl.webflow.com/628a23f009b48ad83558d6d4/628a7a6d521f0378b1fd9d64_Hero__noise_bg.png'), linear-gradient(135deg, #ffc532, rgba(255, 197, 49, 0.9));
   background-position: 0px 0px, 0px 0px;
   background-size: auto, auto;
+}
+
+
+.review__card {
+  @apply max-w-xl p-8 flex flex-col justify-start rounded-xl;
+  @apply shadow-2xl justify-around mx-6;
+  background-image: linear-gradient(180deg, #ffc532, rgba(255, 197, 51, 0.17));
+}
+
+.navbar {
+  @apply bg-transparent noise-bg;
+}
+
+.contact-section {
+  background-color: #faf9f7;
+  background-image: url('https://assets.website-files.com/62222a5eb3c88f3dfe738b25/62726fdfa3fa21da2d220240_dots-bg.png');
+  background-position: 0 0;
+  background-size: 2rem 2rem;
+  color: #19191c;
+}
+
+.form {
+  @apply grid;
+  grid-template-columns: 1fr;
+}
+
+.form {
+  line-height: 2rem;
+}
+
+select {
+  background-position: left .5rem center;
 }

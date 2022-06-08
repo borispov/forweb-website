@@ -1,142 +1,90 @@
-const pricingData = [
-  {
-    title: 'Email Marketing',
-    features: [
-      'חיבור מערכת דיוור לאתר',
-      'ניתור ודיווח ביצועי הקמפיין',
-      'ניתור ודיווח ביצועי הקמפיין',
-      'ניתור ודיווח ביצועי הקמפיין',
-      'ניתור ודיווח ביצועי הקמפיין',
-    ],
-    price: {
-      reccuring: 550,
-      setup: 2250,
-      fees: null,
-    },
-    startingAt: false,
-  },
-  {
-    title: 'אתר תדמית',
-    features: [
-      'עיצוב ב- Figma',
-      'פיתוח אתר והטמעת העיצוב',
-      'חיבור ל- Domain ואחסון',
-      'הדרכה ותמיכה מקיפה לפני מסירה ללקוח',
-    ],
-    price: {
-      reccuring: 1350,
-      setup: 2250,
-      fees: null,
-    },
-    startingAt: true,
-  },
-  {
-    title: 'חנות אינטרנטית',
-    features: [
-      'עיצוב חנות ומותג',
-      'פיתוח ב wooCommerce או Shopify',
-      'חיבור דומיין, אחסון וסליקה',
-      'הדרכה ותמיכה מלאה על שימוש בפלטפורמה',
-    ],
-    price: {
-      reccuring: null,
-      setup: 5999,
-      fees: null,
-    },
-    startingAt: true,
-  },
-  {
-    title: 'חבילת תחזוקה',
-    features: [
-      'אופטימיזציות לאתר',
-      'אוטומציות תחזוקה וגיבויים',
-      'עריכה ושינוי תכנים באתר',
-      'בדיקת שגרתיות',
-      'עדכון תוספים וערכת נושא אחת לשבועיים'
-    ],
-    price: {
-      reccuring: 650,
-      setup: null,
-      fees: null,
-    },
-    startingAt: true,
-  },
-  {
-    title: 'Google Ads',
-    features: [
-      'אפיון עסק וקביעת יעדים',
-      'חקר מתחרים ומילות מפתח',
-      'הקמת קמפיין כולל תוכן',
-      'חיבור הקמפיין לאתר עם Google Tags',
-      'ניתור נתונים וביצועים'
-    ],
-    price: {
-      reccuring: 650,
-      setup: 799,
-      fees: '15%',
-    },
-    startingAt: true,
-  },
-  {
-    title: 'Facebook Ads',
-    features: [
-      'אפיון עסק וקביעת יעדים',
-      'חקר מתחרים ומודעותיהם',
-      'הקמת קמפיין פייסבוק וקהלים',
-      'חיבור Pixel',
-      'עיצוב ויצירת מודעות',
-      'מעקב וניתור אחר ביצועים'
-    ],
-    price: {
-      reccuring: 650,
-      setup: 999,
-      fees: '15%',
-    },
-    startingAt: true,
-  },
-];
+import clsxm from "@/lib/clsxm";
 
-interface Price {
-  reccuring: number | null,
-  setup: number | null,
-  fees: string | null,
-}
+import PriceTag from "@/components/pricing/PriceTag";
 
-interface IPackageItem {
-  title: string,
-  features: string[],
-  price: Price,
-  startingAt: boolean,
-}
+import { IPricingItemProps, pricingData } from './pricingData';
 
-interface PricingItemProps {
-  package: IPackageItem;
-  children?: React.ReactNode;
-}
 
-function PricingItem({ package }: PricingItemProps ) {
+
+function PricingItem({ pkg }: IPricingItemProps ) {
+
+  const { price } = pkg;
+
   return (
-    <div className="grid-item p-8 font-bold">
+    <div 
+      className={clsxm(
+        'grid-item flex flex-col justify-between',
+        'p-8 font-bold',
+        'bg-white rounded-sm',
+      )}
+    >
       <h3 className="text-black text-2xl">
-        {package.title}
+        {pkg.title}
       </h3>
-      <ul>
+      <ul className="leading-6 max-w-xs list-disc pt-3 pr-10 mb-8 h-40">
         {
-          package.features.map(feat => (
-            <li key={}
+          pkg.features.map((feat, i) => (
+            <li key={i} className="list-item mb-2 font-normal text-sm">{feat}</li>
           ))
         }
       </ul>
+
+        <div>
+        {
+          price.reccuring &&
+            <PriceTag 
+              prefix={pkg.isManagement ? 'ניהול:' : ''}
+              recurring 
+              value={price.reccuring} 
+              startingAt={pkg.startingAt} 
+            />
+        }
+        {
+          price.setup && 
+            <PriceTag 
+              prefix='הקמה:'
+              value={price.setup} 
+              startingAt={pkg.startingAt} 
+            /> || price.value && <PriceTag
+                    value={price.value}
+                    startingAt={pkg.startingAt}
+                  />
+        }
+
+        </div>
+
+      <a className={clsxm(
+        'black-button mx-auto w-10/12 py-6 rounded-lg mt-6', 
+        'bg-black text-white shadow-sm shadow-gray-300',
+        'button-hover-lg'
+        )}
+        href="#contact">התחל כאן</a>
+      <a href="" className={clsxm(
+        'font-work mx-auto underline font-light pt-4 tracking-wider',
+        'text-black'
+        )}
+      >Book A Call</a>
     </div>
   )
 }
 
-export default PricingSection() {
+export default function PricingSection() {
   return (
-    <section className="space-top">
-      <h1 className="">חבילות</h1>
-      <div className="pricing-grid grid">
+    <section className="pricings">
+      <h1 className="text-center text-5xl">חבילות</h1>
+      <div className="grid gap-1 max-w-5xl mx-auto pt-6 grid-cols-3">
+        {
+          pricingData.map((pkg, id) => (
+            <PricingItem pkg={pkg} key={id} />
+          ))
+        }
       </div>
+
+      <div className="flex justify-center flex-col items-center pt-12">
+        <h2 className="">לא מוצאים חבילה מתאימה? אין בעיה, נתאים לכם!</h2>
+        <button className="mt-4 primary-button button-hover-sm pt-4 bg-primary-300 shadow-sm ">התאת חבילה</button>
+      </div>
+
     </section>
   )
 };

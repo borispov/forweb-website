@@ -17,12 +17,15 @@ module.exports = {
     extend: {
       fontFamily: {
         primary: ['Alef', 'Work Sans', ...fontFamily.sans],
+        'work': ['Work Sans'],
+        'arial': ['Arial']
       },
       boxShadow: {
         DEFAULT: '6px 6px 0 0 #494949',
         'sm': '2px 2px 0 0 rgb(0 0 0 / 1)',
         'md': '4px 4px 0 0 rgb(0 0 0 / 1)',
         'lg': '6px 6px 0 0 rgb(0 0 0 / 1)',
+        'xl': '9px 9px 0 0 rgb(0 0 0 / 1)',
       },
       colors: {
         primary: {

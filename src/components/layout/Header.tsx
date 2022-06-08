@@ -1,25 +1,68 @@
-// import { NavbarData } from '@/lib/siteData';
+import Image from "next/image";
+import React from "react";
 
-export default function Header() {
+import clsxm from "@/lib/clsxm";
+import { NavbarData } from "@/lib/siteData";
+
+
+function NavbarItem({children, href}: {href: string, children: React.ReactNode}) {
   return (
-    <header className='bg-transparent mt-8'>
-      <div className='flex h-14 items-center justify-between'>
+    <a href={href} className={clsxm(
+      'text-gray-600 p-5 mx-10 text-xl font-bold',
+      'hover:text-gray-900',
+    )}>
+      {children}
+    </a>
+  )
+}
 
-        <div className="">
-          <a href="" className="hover:text-gray-600"></a>
-          <a href="" className="hover:text-gray-600"></a>
-        </div>
 
-        <div className="logo pt-12">
-          <h1>Forweb</h1>
-          {/* <img src="" alt="" className="logo__image" /> */}
-        </div>
+export default function Header({ layoutVariation = 'new'}) {
 
-        <div className="">
-          <a href="" className="hover:text-gray-600"></a>
-          <a href="" className="hover:text-gray-600"></a>
-        </div>
+  const originalVariation = () => (
+    NavbarData.links.map((item, i) => {
+      return i === 1
+        ? (
+          <>
+            <NavbarItem href={item.href}>{item.label}</NavbarItem>
+            <div className="logo mt-12">
+              <Image 
+                className="mx-8 pt-5 align-bottom"
+                width={90} 
+                height={70} 
+                src="/logo-vertical.png" alt="forweb logo" />
+            </div>
+          </>
+        )
+        : <NavbarItem href={item.href}>{item.label}</NavbarItem>
+      }
+    )
+  )
 
+  const newVariation = () => {
+    const navbarContent = NavbarData.links.map((item, i) => (
+      <NavbarItem key={i} href={item.href}>{item.label}</NavbarItem>
+    ))
+
+    return (
+      <>
+        {navbarContent}
+        <Image 
+          className="mx-8 pt-5 align-bottom"
+          width={90} 
+          height={70} 
+          src="/logo-vertical.png" alt="forweb logo" />
+      </>
+    )
+  }
+
+  return (
+    <header className='navbar grid justify-center h-32'>
+      <div className='flex max-w-5xl items-center'>
+        {
+          layoutVariation === 'old' &&
+            newVariation() || originalVariation()
+        }
       </div>
     </header>
   );
