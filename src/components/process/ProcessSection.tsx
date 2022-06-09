@@ -41,14 +41,16 @@ interface IProcessItem {
 
 interface ProcessItemProps {
   item: IProcessItem,
+  num: number,
   children?: React.ReactNode,
 }
 
 // Single Process Item Component
-function ProcessItem({ item }: ProcessItemProps) {
+function ProcessItem({ item, num }: ProcessItemProps) {
   return (
-    <div className="bg-primary-300 max-w-2xl flex border-2 border-black shadow-lg mt-4 rounded-l-xl">
-      <div className="w-1/5 ">
+    <div className="bg-primary-100 max-w-2xl flex border-2 border-black shadow-lg mt-4 rounded-l-xl">
+      <div className="w-1/5 bg-primary-300 flex-col justify-start text-right">
+        <h1 className="text-8xl pr-2">{num + 1}</h1>
       </div>
       <div className="pt-10 pr-10 pb-8">
         <h2 className="text-black">{item.title}</h2>
@@ -66,14 +68,14 @@ export default function ProcessSection() {
         <h1 className="text-4xl">
           לתת לעסק שלך לצמוח עם
           <br/>
-          5 שלבים פשוטים
+          <span className="underline decoration-wavy motion-safe:transition-all motion-safe:duration-200 decoration-slice underline-offset-3 decoration-indigo-900">5 שלבים פשוטים</span>
         </h1>
         <h2 className="text-2xl font-normal">
           קצר, פשוט ויעיל
         </h2>
         <div className="md:w-6/12 sm:w-4/5 mx-auto mt-12">
           { 
-            state.map((proc, i) => <ProcessItem item={proc} key={i} /> )
+            state.map((proc, i) => <ProcessItem item={proc} key={i} num={i}/> )
           }
         </div>
 
