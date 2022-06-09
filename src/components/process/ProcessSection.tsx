@@ -1,5 +1,11 @@
 import clsxm from "@/lib/clsxm";
 
+import BigSunIcon from "@/icons/BigSunIcon";
+import BirdsScribIcon from "@/icons/BirdsScribIcon";
+import RedCircleWithLinesIcon from "@/icons/RedCircleWithLinesIcon";
+import ThreeLinesIcon from "@/icons/ThreeLinesIcon";
+import WormScrib from "@/icons/WormScrib";
+
 const state = [
   {
     title: 'שלב אפיון וגילוי',
@@ -47,11 +53,16 @@ interface ProcessItemProps {
   children?: React.ReactNode,
 }
 
+
 // Single Process Item Component
 function ProcessItem({ item, num }: ProcessItemProps) {
   return (
     <div className={clsxm(
-      "bg-primary-100 max-w-2xl flex border-2 border-black shadow-lg mt-4 rounded-l-xl text-right",
+      "bg-primary-100 max-w-2xl flex border-2 border-black shadow-lg mt-4 rounded-l-xl text-right mb-16",
+      "relative",
+      [
+        num === 2 && 'z-[2]' || 'z-[0]'
+      ]
       )}>
       <div className={clsxm(
         "w-1/5 bg-primary-300 flex-col justify-start text-right border-l-4 border-indigo-900",
@@ -75,6 +86,7 @@ function ProcessItem({ item, num }: ProcessItemProps) {
 export default function ProcessSection() {
   return (
     <div className="processes relative">
+      <BigSunIcon className="absolute right-0 top-1/3" />
       <div className="container text-center pt-24">
         <h1 className="text-4xl">
           לתת לעסק שלך לצמוח עם
@@ -84,7 +96,11 @@ export default function ProcessSection() {
         <h2 className="text-2xl font-normal">
           קצר, פשוט ויעיל
         </h2>
-        <div className="md:w-6/12 sm:w-4/5 mx-auto mt-12">
+        <div className="md:w-6/12 sm:w-4/5 mx-auto mt-12 relative">
+        <ThreeLinesIcon className="absolute left-0 -top-20" />
+        <RedCircleWithLinesIcon className="absolute left-5 top-20 z-0" />
+        <WormScrib className="absolute left-1/3 top-1/3 z-[1] pt-2" />
+        <BirdsScribIcon className="absolute -bottom-20 -right-20 " />
           { 
             state.map((proc, i) => <ProcessItem item={proc} key={i} num={i}/> )
           }
