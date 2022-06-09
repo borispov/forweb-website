@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import RainDropsIcon from "../../icons/RainDropsIcon";
+import StarsIcon from "../../icons/StarsIcon";
 import clsxm from "../../lib/clsxm";
 
 //TODO: Style THe Grid and Grid-items!
@@ -57,7 +59,9 @@ export default function ServicesGrid() {
   const oldVar = false;
 
   return (
-    <div className="pb-12 p-6 pr-10 mt-16 bg-primary-300 rounded-lg w-1/2">
+    <div className="pb-12 p-6 pr-10 mt-16 bg-primary-300 rounded-lg w-1/2 xl:w-4/5">
+      <RainDropsIcon className="absolute right-28 bottom-1/2"/>
+      <StarsIcon className="absolute right-28 bottom-20"/>
       {
         oldVar && servicesCards.map((benefit) => (
           <div 

@@ -9,6 +9,7 @@ import PricingSection from '@/components/pricing/PricingSection'
 import ProcessSection from '@/components/process/ProcessSection'
 import ServicesSection from '@/components/services/ServicesSection'
 
+import Narrow from '../icons/Narrow';
 
 const Home: NextPage = () => {
   return (
@@ -21,48 +22,61 @@ const Home: NextPage = () => {
 
       <Hero />
 
-      <section className="pt-42 mx-12 mx-w-3xl text-center pt-24">
-        <h4 className="texl-3xl text-secondary">למה אנחנו</h4>
-        <h2 className="text-6xl">ובמה אנחנו שונים מכל השאר?</h2>
 
-        <div className="md:grid md:grid-cols-3 pt-10 sm:flex sm:flex-col">
+      {/* Benefits Section */}
+      <section className="mx-12 text-center relative">
+        {/* SCRIBBLE ABSOLUTE  */}
+        <Narrow 
+          className="absolute left-24 -bottom-24 w-96 h-80 z-10" />
 
-          <div className="bg-unique1 unique1-shadow rounded-lg flex flex-col max-w-sm text-gray-100 p-10 mx-4">
-           <h3 className="text-white">אנחנו מבינים עניין</h3>
-           <p className="max-w-sm pt-3">
-           יש לנו ניסיון בטכנולוגיות המתקדמות בתחום ואנחנו מקפידים להשתמש בטכנולוגיות המתאימות לצרכים שלכם, ולא רק לפי מה שטרנדי.
-           </p>
+        <div className="pt-42 max-w-5xl mx-auto pt-24">
+          <h4 className="texl-3xl text-secondary">למה אנחנו</h4>
+          <h2 className="text-6xl">ובמה אנחנו שונים מכל השאר?</h2>
+
+          <div className="md:grid md:grid-cols-3 pt-10 sm:flex sm:flex-col max-w-5xl mx-auto">
+
+            <div className="bg-unique1 unique1-shadow rounded-lg flex flex-col max-w-sm text-gray-100 p-10 mx-4">
+            <h3 className="text-white">אנחנו מבינים עניין</h3>
+            <p className="max-w-sm pt-3">
+            יש לנו ניסיון בטכנולוגיות המתקדמות בתחום ואנחנו מקפידים להשתמש בטכנולוגיות המתאימות לצרכים שלכם, ולא רק לפי מה שטרנדי.
+            </p>
+            </div>
+
+            <div className="bg-unique2 unique2-shadow rounded-lg flex flex-col max-w-sm text-gray-100 p-10 mx-4">
+            <h3 className=''>שירות בגובה העיניים</h3>
+            <p className="max-w-sm pt-3">
+            אתם עסק קטן. אנחנו עסק קטן. 
+  אנחנו לא טובים מכם, אולי נלמד מכם ויתרה מכך, אנו נשמח לייעץ, לסייע ולהעשיר בידע כל לקוח שמביע עניין וסקרנות.
+  אנחנו מלווים אתכם בכל שלב בתהליך.
+            </p>
+            </div>
+
+            <div className="bg-unique3 unique3-shadow rounded-lg flex flex-col max-w-sm text-gray-100 p-10 mx-4">
+            <h3 className=''>אתם מרוויחים</h3>
+            <p className="max-w-sm pt-3">
+            תכל׳ס? אנחנו רוצים שתרוויחו!
+  מחיר שפוי בתמורה לעבודה איכותית.
+  תמיד תוכלו למצוא זול יותר, 
+  אבל אנחנו מאוד תחרותיים ומשאירים לכם מספיק מרחב לנשימה ול..רווחים.
+
+            </p>
+            </div>
+
           </div>
 
-          <div className="bg-unique2 unique2-shadow rounded-lg flex flex-col max-w-sm text-gray-100 p-10 mx-4">
-           <h3 className=''>שירות בגובה העיניים</h3>
-           <p className="max-w-sm pt-3">
-           אתם עסק קטן. אנחנו עסק קטן. 
-אנחנו לא טובים מכם, אולי נלמד מכם ויתרה מכך, אנו נשמח לייעץ, לסייע ולהעשיר בידע כל לקוח שמביע עניין וסקרנות.
-אנחנו מלווים אתכם בכל שלב בתהליך.
-           </p>
+          <div className="max-w-md mx-auto pt-14 pb-32 relative">
+            <p className="text-sm max-w-sm text-red-700">
+              בסופו של דבר, אתם מקבלים אתר/חנות/אפליקציה שעושה בדיוק את מה שהעסק והלקוחות שלכם צריכים.
+            </p>
+            <button className="primary-button text-3xl shadow-sm hover:shadow-lg rounded-lg relative">
+              בואו לעבוד יחד
+              <div className="scrib__btn-left w-6 h-10 bg-[url('/scribs/button-addon-left.svg')] absolute">
+              </div>
+              <div className="scrib__btn-right w-6 h-10 bg-[url('/scribs/button-addon-right.svg')] absolute">
+              </div>
+            </button>
           </div>
 
-          <div className="bg-unique3 unique3-shadow rounded-lg flex flex-col max-w-sm text-gray-100 p-10 mx-4">
-           <h3 className=''>אתם מרוויחים</h3>
-           <p className="max-w-sm pt-3">
-           תכל׳ס? אנחנו רוצים שתרוויחו!
-מחיר שפוי בתמורה לעבודה איכותית.
-תמיד תוכלו למצוא זול יותר, 
-אבל אנחנו מאוד תחרותיים ומשאירים לכם מספיק מרחב לנשימה ול..רווחים.
-
-           </p>
-          </div>
-
-        </div>
-
-        <div className="max-w-md mx-auto pt-14 pb-32">
-          <p className="text-sm max-w-sm text-red-700">
-            בסופו של דבר, אתם מקבלים אתר/חנות/אפליקציה שעושה בדיוק את מה שהעסק והלקוחות שלכם צריכים.
-          </p>
-          <button className="primary-button text-3xl shadow-sm hover:shadow-lg rounded-lg">
-            בואו לעבוד יחד
-          </button>
         </div>
 
       </section>

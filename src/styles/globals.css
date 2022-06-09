@@ -187,6 +187,35 @@
   .noise-bg {
     background-image: url('/groovepaper.png');
   }
+
+  .scrib {
+    position: absolute;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .scrib__menu {
+    width: 308px;
+    height: 276px;
+    top: 15%;
+    z-index: 1;
+    left: 20%;
+
+  }
+  .scrib__btn-left {
+    /* background: center center; */
+    background-size: contain;
+    background-repeat: no-repeat;
+    left: -24px;
+    top: 10px;
+  }
+  .scrib__btn-right {
+    /* background: center center; */
+    background-size: contain;
+    background-repeat: no-repeat;
+    right: -24px;
+    top: 10px;
+  }
 }
 
 
@@ -211,6 +240,7 @@
   background-image: url('https://uploads-ssl.webflow.com/628a23f009b48ad83558d6d4/628a7a6d521f0378b1fd9d64_Hero__noise_bg.png'), linear-gradient(135deg, #ffc532, rgba(255, 197, 49, 0.9));
   background-position: 0px 0px, 0px 0px;
   background-size: auto, auto;
+
 }
 
 
@@ -243,4 +273,12 @@
 
 select {
   background-position: left .5rem center;
+}
+
+
+.scrib-menu {
+  position: absolute;
+  /* @apply bg-no-repeat; */
+  left: 0%;
+  bottom: 0%;
 }

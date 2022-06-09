@@ -1,3 +1,5 @@
+import clsxm from "@/lib/clsxm";
+
 const state = [
   {
     title: 'שלב אפיון וגילוי',
@@ -7,7 +9,7 @@ const state = [
   },
   {
     title: 'עיצוב',
-    subtitle: 'מיפוי צרכי העסק',
+    subtitle: 'עיצוב ב- Figma',
     description: 'בשלב זה אנו עורכים פגישה לאיסוף נתונים והבנתם ותכנון התכנית',
     stepNumber: 2,
   },
@@ -48,14 +50,23 @@ interface ProcessItemProps {
 // Single Process Item Component
 function ProcessItem({ item, num }: ProcessItemProps) {
   return (
-    <div className="bg-primary-100 max-w-2xl flex border-2 border-black shadow-lg mt-4 rounded-l-xl">
-      <div className="w-1/5 bg-primary-300 flex-col justify-start text-right">
+    <div className={clsxm(
+      "bg-primary-100 max-w-2xl flex border-2 border-black shadow-lg mt-4 rounded-l-xl text-right",
+      )}>
+      <div className={clsxm(
+        "w-1/5 bg-primary-300 flex-col justify-start text-right border-l-4 border-indigo-900",
+        [
+          num % 2 === 0 
+            && 'bg-[#19171c] text-[#faf9f7]'
+            || 'bg-primary-300'
+        ]
+      )}>
         <h1 className="text-8xl pr-2">{num + 1}</h1>
       </div>
       <div className="pt-10 pr-10 pb-8">
         <h2 className="text-black">{item.title}</h2>
-        <h3 className="text-gray-600">{item.subtitle}</h3>
-        <p>{item.description }</p>
+        <h3 className="text-gray-500 text-base font-normal">{item.subtitle}</h3>
+        <p className="max-w-md">{item.description }</p>
       </div>
     </div>
   )
@@ -63,7 +74,7 @@ function ProcessItem({ item, num }: ProcessItemProps) {
 
 export default function ProcessSection() {
   return (
-    <div className="processes">
+    <div className="processes relative">
       <div className="container text-center pt-24">
         <h1 className="text-4xl">
           לתת לעסק שלך לצמוח עם
