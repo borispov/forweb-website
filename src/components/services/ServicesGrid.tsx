@@ -59,9 +59,9 @@ export default function ServicesGrid() {
   const oldVar = false;
 
   return (
-    <div className="pb-12 p-6 pr-10 mt-16 bg-primary-300 rounded-lg w-1/2 xl:w-4/5">
-      <RainDropsIcon className="absolute right-28 bottom-1/2"/>
-      <StarsIcon className="absolute right-28 bottom-20"/>
+    <div className="pb-12 p-6 xl:mr-0 md:mr-12 pr-10 mt-16 bg-primary-300 rounded-lg w-full md:w-3/5 xl:w-4/5">
+      <RainDropsIcon className="opacity-75 md:visible invisible absolute md:right-8 xl:right-28 bottom-1/2"/>
+      <StarsIcon className="absolute right-8 bottom-4 lg:right-28 lg:bottom-20 lg:opacity-25"/>
       {
         oldVar && servicesCards.map((benefit) => (
           <div 

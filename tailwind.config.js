@@ -48,6 +48,10 @@ module.exports = {
         dark: '#222222',
       },
       keyframes: {
+        fadeIn: {
+          '0%': { opacity: 0},
+          '100%': { opacity: 100},
+        },
         flicker: {
           '0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%': {
             opacity: 0.99,
@@ -71,6 +75,7 @@ module.exports = {
       animation: {
         flicker: 'flicker 3s linear infinite',
         shimmer: 'shimmer 1.3s linear infinite',
+        fadeIn: 'fadeIn 2s ease-in forwards'
       },
     },
   },

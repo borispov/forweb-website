@@ -10,6 +10,9 @@ import ProcessSection from '@/components/process/ProcessSection'
 import ServicesSection from '@/components/services/ServicesSection'
 
 import Narrow from '../icons/Narrow';
+import Portoflio from '@/components/portfolio/Portfolio';
+import FAQ from '@/components/FAQ';
+import Link from 'next/link';
 
 const Home: NextPage = () => {
   return (
@@ -24,10 +27,10 @@ const Home: NextPage = () => {
 
 
       {/* Benefits Section */}
-      <section className="mx-12 text-center relative">
+      <section className="mx-4 md:mx-12 text-center relative">
         {/* SCRIBBLE ABSOLUTE  */}
         <Narrow 
-          className="absolute left-24 -bottom-24 w-96 h-80 z-10" />
+          className="animate__animated animate__fadeInLeft animate__once absolute left-1/4 -bottom-24 w-52 lg:left-24 lg:-bottom-24 lg:w-96 lg:h-80 sm:w-32 sm:h-20 z-10" />
 
         <div className="pt-42 max-w-5xl mx-auto pt-24">
           <h4 className="texl-3xl text-secondary">למה אנחנו</h4>
@@ -35,14 +38,14 @@ const Home: NextPage = () => {
 
           <div className="md:grid md:grid-cols-3 pt-10 sm:flex sm:flex-col max-w-5xl mx-auto">
 
-            <div className="bg-unique1 unique1-shadow rounded-lg flex flex-col max-w-sm text-gray-100 p-10 mx-4">
+            <div className="bg-unique1 unique1-shadow rounded-lg flex flex-col max-w-sm text-gray-100 p-4 md:p-10 md:mx-4 md:my-0 my-4 mx-auto">
             <h3 className="text-white">אנחנו מבינים עניין</h3>
             <p className="max-w-sm pt-3">
             יש לנו ניסיון בטכנולוגיות המתקדמות בתחום ואנחנו מקפידים להשתמש בטכנולוגיות המתאימות לצרכים שלכם, ולא רק לפי מה שטרנדי.
             </p>
             </div>
 
-            <div className="bg-unique2 unique2-shadow rounded-lg flex flex-col max-w-sm text-gray-100 p-10 mx-4">
+            <div className="bg-unique2 unique2-shadow rounded-lg flex flex-col max-w-sm text-gray-100 p-4 md:p-10 md:mx-4 md:my-0 mx-auto my-4">
             <h3 className=''>שירות בגובה העיניים</h3>
             <p className="max-w-sm pt-3">
             אתם עסק קטן. אנחנו עסק קטן. 
@@ -51,7 +54,7 @@ const Home: NextPage = () => {
             </p>
             </div>
 
-            <div className="bg-unique3 unique3-shadow rounded-lg flex flex-col max-w-sm text-gray-100 p-10 mx-4">
+            <div className="bg-unique3 unique3-shadow rounded-lg flex flex-col max-w-sm text-gray-100 p-4 md:p-10 md:mx-4 md:my-0 mx-auto my-4">
             <h3 className=''>אתם מרוויחים</h3>
             <p className="max-w-sm pt-3">
             תכל׳ס? אנחנו רוצים שתרוויחו!
@@ -65,16 +68,18 @@ const Home: NextPage = () => {
           </div>
 
           <div className="max-w-md mx-auto pt-14 pb-32 relative">
-            <p className="text-sm max-w-sm text-red-700">
+            <p className="text-sm max-w-sm text-red-700 mb-4">
               בסופו של דבר, אתם מקבלים אתר/חנות/אפליקציה שעושה בדיוק את מה שהעסק והלקוחות שלכם צריכים.
             </p>
-            <button className="primary-button text-3xl shadow-sm hover:shadow-lg rounded-lg relative">
-              בואו לעבוד יחד
-              <div className="scrib__btn-left w-6 h-10 bg-[url('/scribs/button-addon-left.svg')] absolute">
-              </div>
-              <div className="scrib__btn-right w-6 h-10 bg-[url('/scribs/button-addon-right.svg')] absolute">
-              </div>
-            </button>
+            <Link href="#contact-form">
+              <button className="primary-button text-3xl shadow-sm hover:shadow-lg rounded-lg relative">
+                בואו לעבוד יחד
+                <div className="scrib__btn-left w-6 h-10 bg-[url('/scribs/button-addon-left.svg')] absolute">
+                </div>
+                <div className="scrib__btn-right w-6 h-10 bg-[url('/scribs/button-addon-right.svg')] absolute">
+                </div>
+              </button>
+            </Link>
           </div>
 
         </div>
@@ -87,82 +92,31 @@ const Home: NextPage = () => {
       
       <div className="flex flex-col items-center space-y">
         <h1 className="thick-underline text-5xl">חברים מספרים</h1>
-        <div className="flex flex-row mt-12">
+        <div className="flex flex-col lg:flex-row mt-12 gap-y-8 lg:gap-y-0 mb-24">
           <div className="review__card">
-            <Image src="/quotes.png" alt="quotes icon" width='32' height={32} objectFit="contain"/>
-            <p className="max-w-sm">
-            ״הצטערנו שלא פנינו עוד קודם. השירות, המקצועיות, המענה המהיר ומתן הסבר לכל שאלה וייעוץ - הם מעבר לכל. והכי חשוב - מחיר ותוצאות בשטח.
+            <Image src="/quotes.png" alt="quotes icon" width={54} height={48} objectFit="contain"/>
+            <p className="max-w-sm mt-4 text-base">
+            הצטערנו שלא פנינו עוד קודם. השירות, המקצועיות, המענה המהיר ומתן הסבר לכל שאלה וייעוץ - הם מעבר לכל. והכי חשוב - מחיר ותוצאות בשטח.
             </p>
-            <h2>איגור ויבגני, Raw Planet</h2>
+            <h2 className="mt-2">איגור ויבגני, Raw Planet</h2>
           </div>
-          <div className="review__card">
+
+          {/* <div className="review__card">
             <Image objectFit="contain" src="/quotes.png" alt="quotes icon" width={32} height={32}/>
             <p className="max-w-sm">
             פנינו ל Forweb לצורך שיווק ממומן בגוגל ופייסבוק לעסק חדש שלנו. לא רק שקיבלנו מענה מקצועי והסברים שסייעו לנו להבין רבות אודות שיווק ובכלל, אלא מתן מענה והסברים בעלי ערך בנוגע לנושאים כגון תחזוקת האתר, SEO ומה לא...
             </p>
             <h2>אלמוג ויוסי, Pixel Design</h2>
-          </div>
+          </div> */}
 
         </div>
       </div>
 
-      <div className="flex flex-col items-center">
-        <h1 className="text-5xl thick-underline">PORTFOLIO</h1>
 
-        <div className="flex justify-center px-32">
-          <div className="max-w-md py-2 px-4 flex flex-col rounded-xl shadow-2xl bg-white">
-          {/* Insert Project Images Here h */}
-          <h2 className="text-3xl"></h2>
-          <p className='pt-4'></p>
-          </div>
-          <div className="max-w-md py-2 px-4 flex flex-col rounded-xl shadow-2xl bg-white">
-
-          </div>
-          <div className="max-w-md py-2 px-4 flex flex-col rounded-xl shadow-2xl bg-white">
-
-          </div>
-          <div className="max-w-md py-2 px-4 flex flex-col rounded-xl shadow-2xl bg-white">
-
-          </div>
-          <div className="max-w-md py-2 px-4 flex flex-col rounded-xl shadow-2xl bg-white">
-
-          </div>
-        </div>
-      </div>
-
-
-      {/* ADD A FORM HERE!!! */}
-
-<Form />
-
-      {/* FAQ SECTION  */}
-      <section className="faq noise-bg">
-
-        <div className="px-8 pt-40 max-w-lg mx-auto cursor-default">
-        <h2 className="text-center text-gray-600">שאלות?</h2>
-        <h3 className="text-center text-gray-600">אם נותרו לכם שאלות, פנו אלינו!</h3>
-          <div className="bg-gray-100 rounded-lg flex justify-between py-4 px-16 shadow-2xl mb-4">
-            <p>כמה עיצובים אפשר לבקש?</p>
-            <p className="faq-item hidden">כמה עיצובים אפשר לבקש?</p>
-            <span>&darr;</span>
-          </div>
-          <div className="bg-gray-100 rounded-lg flex justify-between py-4 px-16 shadow-2xl mb-4">
-            <p>איך מתנהלת התקשורת?</p>
-            <p className="faq-item hidden">כמה עיצובים אפשר לבקש?</p>
-            <span>&darr;</span>
-          </div>
-          <div className="bg-gray-100 rounded-lg flex justify-between py-4 px-16 shadow-2xl mb-4">
-            <p>מה אם אני לא רואה חבילה מתאימה בשבילי?</p>
-            <p className="faq-item hidden">כמה עיצובים אפשר לבקש?</p>
-            <span>&darr;</span>
-          </div>
-          <div className="bg-gray-100 rounded-lg flex justify-between py-4 px-16 shadow-2xl mb-4">
-            <p>מדוע אין חבילה עבור אפליקציות Web?</p>
-            <p className="faq-item hidden">כמה עיצובים אפשר לבקש?</p>
-            <span>&darr;</span>
-          </div>
-        </div>
-      </section>
+      <h1 className="text-center text-5xl thick-underline">PORTFOLIO</h1>
+      <Portoflio />
+      <Form />
+      <FAQ />
       {/* FOOTER HERE  */}
 
 

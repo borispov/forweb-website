@@ -180,7 +180,7 @@
 
   .noise-bg-with-color {
     background-image: 
-      linear-gradient(180deg, var(--color-primary-300), #f9f9f9),
+      linear-gradient(180deg, #fbe8de, #fff),
       url('/groovepaper.png');
   }
 
@@ -200,7 +200,6 @@
     top: 15%;
     z-index: 1;
     left: 20%;
-
   }
   .scrib__btn-left {
     /* background: center center; */
@@ -226,9 +225,9 @@
 
 .pricings {
   position: relative;
-  /* background-image: 
+  background-image: 
     linear-gradient(180deg, #fbe8de, #fff),
-    url('/groovepaper.png'); */
+    url('/groovepaper.png');
   @apply noise-bg-with-color;
   background-position: 0px 0px, 0px 0px;
   background-size: auto, auto;
@@ -247,7 +246,7 @@
 .review__card {
   @apply max-w-xl p-8 flex flex-col justify-start rounded-xl;
   @apply shadow-2xl justify-around mx-6;
-  background-image: linear-gradient(180deg, #ffc532, rgba(255, 197, 51, 0.17));
+  background-image: linear-gradient(180deg, #ffc53299, rgba(255, 197, 51, 0.17));
 }
 
 .navbar {
@@ -281,4 +280,13 @@ select {
   /* @apply bg-no-repeat; */
   left: 0%;
   bottom: 0%;
+}
+
+.project-item:nth-child(even) {
+  @apply lg:ml-auto lg:mr-0 sm:mx-auto;
+}
+
+
+.project-item:nth-child(odd) {
+  @apply sm:mx-auto lg:ml-0 lg:mr-auto;
 }

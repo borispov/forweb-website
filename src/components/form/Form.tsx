@@ -1,4 +1,6 @@
+import clsxm from '@/lib/clsxm';
 import React, { SyntheticEvent,useCallback,useState } from 'react';
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 function FormTextField({ children}: {children: React.ReactNode }) {
   return (
@@ -72,13 +74,19 @@ export default function Form(props: IFormProps) {
   const changeInput = useCallback(inputChangeHandler, [formData])
 
   return (
-    <section className='contact-section'>
+    <section className='contact-section pb-20'>
 
       <div className="container px-8 max-w-7xl gap-16 flex lg:flex-row flex-col pt-32">
 
+        <AnimationOnScroll animateIn="animate__backInUp" animateOnce>
+          <div className={clsxm(
+            "w-60 h-60 bg-primary-300/75 rounded-full absolute right-3/4 -top-15 z-10",
+          )}></div>
+        </AnimationOnScroll>
+
         <div className="lg:w-1/2 sm:w-full relative">
           <div className="lg:sticky top-32">
-            <h2 className="mb-4 leading-8 text-4xl">
+            <h2 className="mb-4 leading-snug text-4xl">
               יש לך רעיון לפרויקט?
               נשמח לפטפט!
             </h2>
@@ -96,7 +104,7 @@ export default function Form(props: IFormProps) {
         </div>
 
         <div className="form-wrapper lg:w-1/2 sm:w-full">
-          <form onSubmit={submitHandler} className="form">
+          <form id="contact-form" onSubmit={submitHandler} className="form">
 
             {
               contactFormFields.map(([id, placeholder]) => {

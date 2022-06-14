@@ -79,56 +79,56 @@ export const pricingData = [
     startingAt: true,
     isManagement: false,
   },
-  {
-    title: 'Google Ads',
-    features: [
-      'אפיון עסק וקביעת יעדים',
-      'חקר מתחרים ומילות מפתח',
-      'הקמת קמפיין כולל תוכן',
-      'חיבור הקמפיין לאתר עם Google Tags',
-      'ניתור נתונים וביצועים'
-    ],
-    price: {
-      reccuring: 650,
-      setup: 799,
-      fees: '15%',
-    },
-    startingAt: true,
-    isManagement: true,
-  },
-  {
-    title: 'Facebook Ads',
-    features: [
-      'אפיון עסק וקביעת יעדים',
-      'חקר מתחרים ומודעותיהם',
-      'הקמת קמפיין פייסבוק וקהלים',
-      'חיבור Pixel',
-      'עיצוב ויצירת מודעות',
-      'מעקב וניתור אחר ביצועים'
-    ],
-    price: {
-      reccuring: 650,
-      setup: 999,
-      fees: '15%',
-    },
-    startingAt: true,
-    isManagement: true,
-  },
-  {
-    title: 'Email Marketing',
-    features: [
-      'חיבור מערכת דיוור לאתר',
-      'ייבוא אנשי קשר קיימים',
-      'יצירת אוטומציות ותוכן',
-      'יצירת עד 4 מיילים בחודש',
-      'ניתור ודיווח ביצועים',
-    ],
-    price: {
-      reccuring: 550,
-      setup: 2250,
-      fees: null,
-    },
-    startingAt: false,
-    isManagement: true,
-  },
+  // {
+  //   title: 'Google Ads',
+  //   features: [
+  //     'אפיון עסק וקביעת יעדים',
+  //     'חקר מתחרים ומילות מפתח',
+  //     'הקמת קמפיין כולל תוכן',
+  //     'חיבור הקמפיין לאתר עם Google Tags',
+  //     'ניתור נתונים וביצועים'
+  //   ],
+  //   price: {
+  //     reccuring: 650,
+  //     setup: 799,
+  //     fees: '15%',
+  //   },
+  //   startingAt: true,
+  //   isManagement: true,
+  // },
+  // {
+  //   title: 'Facebook Ads',
+  //   features: [
+  //     'אפיון עסק וקביעת יעדים',
+  //     'חקר מתחרים ומודעותיהם',
+  //     'הקמת קמפיין פייסבוק וקהלים',
+  //     'חיבור Pixel',
+  //     'עיצוב ויצירת מודעות',
+  //     'מעקב וניתור אחר ביצועים'
+  //   ],
+  //   price: {
+  //     reccuring: 650,
+  //     setup: 999,
+  //     fees: '15%',
+  //   },
+  //   startingAt: true,
+  //   isManagement: true,
+  // },
+  // {
+  //   title: 'Email Marketing',
+  //   features: [
+  //     'חיבור מערכת דיוור לאתר',
+  //     'ייבוא אנשי קשר קיימים',
+  //     'יצירת אוטומציות ותוכן',
+  //     'יצירת עד 4 מיילים בחודש',
+  //     'ניתור ודיווח ביצועים',
+  //   ],
+  //   price: {
+  //     reccuring: 550,
+  //     setup: 2250,
+  //     fees: null,
+  //   },
+  //   startingAt: false,
+  //   isManagement: true,
+  // },
 ]

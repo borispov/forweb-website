@@ -1,5 +1,7 @@
 import clsxm from "@/lib/clsxm";
 
+import { AnimationOnScroll } from 'react-animation-on-scroll';
+
 import BigSunIcon from "@/icons/BigSunIcon";
 import BirdsScribIcon from "@/icons/BirdsScribIcon";
 import RedCircleWithLinesIcon from "@/icons/RedCircleWithLinesIcon";
@@ -58,7 +60,7 @@ interface ProcessItemProps {
 function ProcessItem({ item, num }: ProcessItemProps) {
   return (
     <div className={clsxm(
-      "bg-primary-100 max-w-2xl flex border-2 border-black shadow-lg mt-4 rounded-l-xl text-right mb-16",
+      "bg-primary-100 max-w-screen-sm mx-4 lg:max-w-2xl flex border-2 border-black shadow-lg mt-4 rounded-l-xl text-right mb-16",
       "relative",
       [
         num === 2 && 'z-[2]' || 'z-[0]'
@@ -85,28 +87,37 @@ function ProcessItem({ item, num }: ProcessItemProps) {
 
 export default function ProcessSection() {
   return (
-    <div className="processes relative">
+    <div className="processes relative pb-12">
       <BigSunIcon className="absolute right-0 top-1/3" />
       <div className="container text-center pt-24">
-        <h1 className="text-4xl">
+        <h1 className="text-4xl text-[#333] mb-4">
           לתת לעסק שלך לצמוח עם
           <br/>
-          <span className="underline decoration-wavy motion-safe:transition-all motion-safe:duration-200 decoration-slice underline-offset-3 decoration-indigo-900">5 שלבים פשוטים</span>
+          5 שלבים פשוטים
         </h1>
-        <h2 className="text-2xl font-normal">
+        <h2 className="text-[18px] font-bold text-[#333333CF]">
           קצר, פשוט ויעיל
         </h2>
         <div className="md:w-6/12 sm:w-4/5 mx-auto mt-12 relative">
-        <ThreeLinesIcon className="absolute left-0 -top-20" />
-        <RedCircleWithLinesIcon className="absolute left-5 top-20 z-0" />
-        <WormScrib className="absolute left-1/3 top-1/3 z-[1] pt-2" />
-        <BirdsScribIcon className="absolute -bottom-20 -right-20 " />
+        <AnimationOnScroll animateOnce animateIn="animate__fadeInLeft">
+          <ThreeLinesIcon className="absolute left-0 -top-20" />
+        </AnimationOnScroll>
+
+        <AnimationOnScroll animateOnce animateIn="animate__slideInLeft">
+          <RedCircleWithLinesIcon className="absolute left-5 top-20 z-0" />
+        </AnimationOnScroll>
+
+        <AnimationOnScroll animateOnce>
+          <WormScrib className="animate__backInDown absolute left-1/3 top-1/3 z-[1] pt-2" />
+        </AnimationOnScroll>
+
+        <BirdsScribIcon className="animate__animated animate__fadeIn absolute -bottom-20 right-0" />
           { 
             state.map((proc, i) => <ProcessItem item={proc} key={i} num={i}/> )
           }
         </div>
 
-        <h3 className="mt-12 mx-auto">
+        <h3 className="mt-24 lg:mt-12 mx-auto">
           וזכרו כי אנו אתכם בכל שלב
         </h3>
       </div>
