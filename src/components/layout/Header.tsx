@@ -71,7 +71,7 @@ export default function Header({ layoutVariation = 'old'}) {
     NavbarData.links.map((item, i) => {
       return i === 1
         ? (
-          <>
+          <nav key={item.label}>
             <NavbarItem href={item.href}>{item.label}</NavbarItem>
             <div className="logo mt-12">
               <Image 
@@ -80,9 +80,9 @@ export default function Header({ layoutVariation = 'old'}) {
                 height={70} 
                 src="/logo-vertical.png" alt="forweb logo" />
             </div>
-          </>
+          </nav>
         )
-        : <NavbarItem href={item.href}>{item.label}</NavbarItem>
+        : <NavbarItem key={item.label} href={item.href}>{item.label}</NavbarItem>
       }
     )
   )

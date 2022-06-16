@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 interface Project {
   projectName: string;
@@ -52,8 +51,6 @@ export default function Portoflio() {
                   transition-all hover:shadow-primary-200
                   project-item rounded-lg shadow-2xl w-auto lg:max-w-md max-w-screen-sm mx-4"
                 >
-                <AnimationOnScroll animateOnce animateIn="animate__fadeInUp">
-                {/* <div className="w-16 h-16 bg-primrary-300 rounded-lg"> */}
                   <Image 
                     className="rounded-lg"
                     src={project.imagePath} 
@@ -62,14 +59,10 @@ export default function Portoflio() {
                     height={300} 
                     // layout='responsive'
                   />
-                {/* </div> */}
                 <div className="mt-4 p-6 text-center">
                   <h3 className="text-xl text-gray-700">{project.projectName}</h3>
                   <h4 className="text-lg text-gray-600 font-normal">{project.typeOfWork}</h4>
                 </div>
-                </AnimationOnScroll>
-
-
               </div>
 
           ))
