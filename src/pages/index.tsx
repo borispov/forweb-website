@@ -12,7 +12,7 @@ import ServicesSection from '@/components/services/ServicesSection';
 import FAQ from '@/components/FAQ';
 import Portoflio from '@/components/portfolio/Portfolio';
 import Link from 'next/link';
-import Narrow from '../icons/Narrow';
+// import Narrow from '../icons/Narrow';
 
 const Home: NextPage = () => {
   return (
@@ -29,8 +29,8 @@ const Home: NextPage = () => {
       {/* Benefits Section */}
       <section className="mx-4 md:mx-12 text-center relative">
         {/* SCRIBBLE ABSOLUTE  */}
-        <Narrow 
-          className="animate__animated animate__fadeInLeft animate__once absolute left-1/4 -bottom-24 w-52 lg:left-24 lg:-bottom-24 lg:w-96 lg:h-80 sm:w-32 sm:h-20 z-10" />
+        {/* <Narrow 
+          className="animate__animated animate__fadeInLeft animate__once absolute left-1/4 -bottom-24 w-52 lg:left-24 lg:-bottom-24 lg:w-96 lg:h-80 sm:w-32 sm:h-20 z-10" /> */}
 
         <div className="pt-42 max-w-5xl mx-auto pt-24">
           <h4 className="texl-3xl text-secondary">למה אנחנו</h4>

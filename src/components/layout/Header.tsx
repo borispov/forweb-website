@@ -35,11 +35,11 @@ function HamburgerMenu() {
         className={clsxm(
           "absolute w-screen bg-gray-700 opacity-0 z-10 space-y-4 right-0 left-0 mt-4",
           "transition-all duration-700 opacity-100",
-          "flex flex-col justify-evenly"
+          "flex flex-col justify-evenly shadow-2xl"
       )}>
         {
           NavbarData.links.map(item => (
-            <NavbarItem key={item.label} cx="my-4 text-white hover:text-gray-100 hover:underline decoration-orange-300" href={item.href}>{item.label}</NavbarItem>
+            <NavbarItem onClickHandler={clickHandler} key={item.label} cx="my-4 text-white hover:text-gray-100 hover:underline decoration-orange-300" href={item.href}>{item.label}</NavbarItem>
           ))
         }
       </div>
@@ -49,9 +49,12 @@ function HamburgerMenu() {
 
 
 
-function NavbarItem({children, href, cx}: {cx?: string, href: string, children: React.ReactNode}) {
+function NavbarItem({onClickHandler, children, href, cx}: {onClickHandler?: React.MouseEventHandler ,cx?: string, href: string, children: React.ReactNode}) {
   return (
-    <a href={href} className={clsxm(
+    <a 
+      onClick={onClickHandler}
+      href={href} 
+      className={clsxm(
       'text-gray-600 p-5 mx-10 text-xl font-bold',
       'hover:text-gray-900',
       [
@@ -71,7 +74,7 @@ export default function Header({ layoutVariation = 'old'}) {
     NavbarData.links.map((item, i) => {
       return i === 1
         ? (
-          <nav key={item.label}>
+          <nav key={item.label} className="contents">
             <NavbarItem href={item.href}>{item.label}</NavbarItem>
             <div className="logo mt-12">
               <Image 
@@ -112,7 +115,7 @@ export default function Header({ layoutVariation = 'old'}) {
             newVariation() || originalVariation()
         }
       </div>
-      <div className="md:hidden flex justify-between mx-4 items-center -mt-10">
+      <nav className="md:hidden flex justify-between mx-4 items-center -mt-10">
         <HamburgerMenu/>
         <div className="logo -ml-16">
           <Image 
@@ -121,7 +124,7 @@ export default function Header({ layoutVariation = 'old'}) {
             height={200} 
             src="/logo.png" alt="forweb logo" />
           </div>
-      </div>
+      </nav>
     </header>
   );
 }
