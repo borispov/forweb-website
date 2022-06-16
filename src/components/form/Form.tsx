@@ -56,9 +56,9 @@ export default function Form() {
   
   const [ formData, formDataSet ] = useState<FormValues>(initialFormData);
 
-  async function submitHandler(e:SyntheticEvent) {
-    e.preventDefault();
-  } 
+  // async function submitHandler(e:SyntheticEvent) {
+  //   e.preventDefault();
+  // } 
 
 
   function inputChangeHandler(e: React.FormEvent<HTMLInputElement>) {
@@ -107,7 +107,7 @@ export default function Form() {
             data-netlify="true" 
             name="contact-form"
             id="contact-form" 
-            onSubmit={submitHandler} 
+            // onSubmit={submitHandler} 
             className="form">
 
             <input type="hidden" name="contact-form" value="contact-form" />
