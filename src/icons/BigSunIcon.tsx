@@ -1,4 +1,4 @@
-export default function BigSunIcon({ className }){
+export default function BigSunIcon({ className }: { className: string}){
   return (
     <svg className={className} width="309" height="717" viewBox="0 0 309 717" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g opacity="0.5">

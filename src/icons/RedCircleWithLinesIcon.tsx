@@ -1,4 +1,4 @@
-export default function RedCircleWithLinesIcon({ className }) {
+export default function RedCircleWithLinesIcon({ className }: { className: string}) {
   return (
     <svg className={className} width="186" height="188" viewBox="0 0 186 188" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M186 90.4334C185.185 139.033 150.025 179.895 102.648 186.818C54.0482 193.877 9.11394 160.482 1.24027 112.018C-4.86861 74.8218 12.1005 37.0825 40.8801 17.3984C57.7135 5.58785 76.5831 -0.249528 97.2176 0.293484C99.5254 0.429236 101.697 -0.113775 104.005 0.0219777C106.856 0.157731 109.843 0.157731 112.693 0.700742C148.804 7.75989 176.769 35.725 183.556 71.971C184.778 78.0799 185.185 84.3245 186 90.4334Z" fill="#EA552B"/>

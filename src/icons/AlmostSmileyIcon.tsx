@@ -1,4 +1,4 @@
-export default function CoolLinesIcon ({ className }){
+export default function CoolLinesIcon ({ className }: { className: string}){
   return(
 <svg className={className} width="170" height="200" viewBox="0 0 170 200" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g opacity="0.8">

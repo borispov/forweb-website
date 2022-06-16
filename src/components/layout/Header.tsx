@@ -8,11 +8,16 @@ function HamburgerMenu() {
   const [open, setOpen] = React.useState(false);
   const [height, setHeight] = React.useState('0px');
 
+  // const contentSpace = React.useRef(document.createElement("div"))
+
   const contentSpace = React.useRef<HTMLDivElement>(null);
 
   const clickHandler = () => {
     setOpen(!open);
-    setHeight( open ? '0px' : `${contentSpace.current?.scrollHeight * 10}px`);
+    if (contentSpace == undefined || contentSpace.current == undefined) {
+      return;
+    }
+    setHeight( open ? '0px' : `${contentSpace.current.scrollHeight * 10}px`);
   } 
 
   return (
@@ -34,7 +39,7 @@ function HamburgerMenu() {
       )}>
         {
           NavbarData.links.map(item => (
-            <NavbarItem cx="my-4 text-white hover:text-gray-100 hover:underline decoration-orange-300" href={item.href}>{item.label}</NavbarItem>
+            <NavbarItem key={item.label} cx="my-4 text-white hover:text-gray-100 hover:underline decoration-orange-300" href={item.href}>{item.label}</NavbarItem>
           ))
         }
       </div>

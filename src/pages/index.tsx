@@ -1,18 +1,18 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
+import type { NextPage } from 'next';
+import Head from 'next/head';
 import Image from 'next/image';
 
 import Form from '@/components/form/Form';
-import Hero from '@/components/Hero'
-import Layout from '@/components/layout/Layout'
-import PricingSection from '@/components/pricing/PricingSection'
-import ProcessSection from '@/components/process/ProcessSection'
-import ServicesSection from '@/components/services/ServicesSection'
+import Hero from '@/components/Hero';
+import Layout from '@/components/layout/Layout';
+import PricingSection from '@/components/pricing/PricingSection';
+import ProcessSection from '@/components/process/ProcessSection';
+import ServicesSection from '@/components/services/ServicesSection';
 
-import Narrow from '../icons/Narrow';
-import Portoflio from '@/components/portfolio/Portfolio';
 import FAQ from '@/components/FAQ';
+import Portoflio from '@/components/portfolio/Portfolio';
 import Link from 'next/link';
+import Narrow from '../icons/Narrow';
 
 const Home: NextPage = () => {
   return (

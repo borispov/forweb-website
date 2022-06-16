@@ -1,7 +1,7 @@
 export interface IPriceType {
   prefix?: string;
   recurring?: boolean;
-  value: number;
+  value: number | null;
   startingAt: boolean;
   isManagement?: boolean;
 }
@@ -9,7 +9,7 @@ export interface IPrice {
   reccuring: number | null,
   setup: number | null,
   fees: string | null,
-  value?: number;
+  value?: number | null;
 }
 
 export interface IPackageItem {

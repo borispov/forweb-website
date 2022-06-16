@@ -1,8 +1,5 @@
-import * as React from 'react';
-
 import Link from 'next/link';
 
-import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 import { HeroSectionData } from '@/lib/siteData';
 
@@ -36,8 +33,8 @@ function Hero() {
         <path d="M138.3 92.2C143.5 103.5 137.3 123.2 120.1 138.1C103 153.1 74.8 163.3 61 153.4C47.3 143.4 48 113.4 56.9 96.9C65.8 80.4 82.9 77.5 99.7 77.6C116.6 77.7 133.1 80.8 138.3 92.2Z" fill="url(#paint0_linear_69_10)"/>
         <defs>
         <linearGradient id="paint0_linear_69_10" x1="95.2553" y1="77.5975" x2="95.2553" y2="157.326" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#F11BC2"/>
-        <stop offset="0.942708" stop-color="#9020E9" stop-opacity="0.74"/>
+        <stop stopColor="#F11BC2"/>
+        <stop offset="0.942708" stopColor="#9020E9" stopOpacity="0.74"/>
         </linearGradient>
         </defs>
       </svg>

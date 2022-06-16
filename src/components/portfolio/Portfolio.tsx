@@ -46,9 +46,11 @@ export default function Portoflio() {
       <div className="grid md:grid-cols-2 grid-cols-1 gap-5 md:gap-8">
          {
           portfolioData.map(project => (
-              <div className="
-                transition-all hover:shadow-primary-200
-                project-item rounded-lg shadow-2xl w-auto lg:max-w-md max-w-screen-sm mx-4"
+              <div 
+                key={project.projectName}
+                className="
+                  transition-all hover:shadow-primary-200
+                  project-item rounded-lg shadow-2xl w-auto lg:max-w-md max-w-screen-sm mx-4"
                 >
                 <AnimationOnScroll animateOnce animateIn="animate__fadeInUp">
                 {/* <div className="w-16 h-16 bg-primrary-300 rounded-lg"> */}

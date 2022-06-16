@@ -1,6 +1,4 @@
 import Accordion from '@/components/Accordion';
-import clsxm from '@/lib/clsxm';
-import * as React from 'react';
 
 
 

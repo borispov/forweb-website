@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
 import clsxm from '@/lib/clsxm';
+import React, { useRef, useState } from 'react';
 
 interface AccordionProps {
   title: string;
@@ -17,7 +17,9 @@ export default function Accordion ({ title, children }: AccordionProps) {
 
   function toggleAccordion() {
     setActive((prevState) => !prevState)
-    // @ts-ignore
+    if (contentSpace == undefined || contentSpace.current == undefined) {
+      return;
+    }
     setHeight( active ? '0px' : `${contentSpace.current?.scrollHeight * 2}px`);
     setRotate(active ? 'transform duration-700 ease' : 'transform duration-700 ease rotate-180')
   }

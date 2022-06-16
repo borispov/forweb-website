@@ -1,6 +1,4 @@
 import ServicesGrid from "@/components/services/ServicesGrid";
-import { AnimationOnScroll } from 'react-animation-on-scroll'
-
 
 export default function ServicesSection() {
   return (

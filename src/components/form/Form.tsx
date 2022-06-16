@@ -1,5 +1,5 @@
 import clsxm from '@/lib/clsxm';
-import React, { SyntheticEvent,useCallback,useState } from 'react';
+import React, { SyntheticEvent, useCallback, useState } from 'react';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 function FormTextField({ children}: {children: React.ReactNode }) {
@@ -52,13 +52,12 @@ const initialFormData = {
 }
 
 
-export default function Form(props: IFormProps) {
+export default function Form() {
   
   const [ formData, formDataSet ] = useState<FormValues>(initialFormData);
 
   async function submitHandler(e:SyntheticEvent) {
     e.preventDefault();
-    console.log(formData);
   } 
 
 
@@ -104,7 +103,14 @@ export default function Form(props: IFormProps) {
         </div>
 
         <div className="form-wrapper lg:w-1/2 sm:w-full">
-          <form id="contact-form" onSubmit={submitHandler} className="form">
+          <form 
+            data-netlify="true" 
+            name="contact-form"
+            id="contact-form" 
+            onSubmit={submitHandler} 
+            className="form">
+
+            <input type="hidden" name="contact-form" value="contact-form" />
 
             {
               contactFormFields.map(([id, placeholder]) => {

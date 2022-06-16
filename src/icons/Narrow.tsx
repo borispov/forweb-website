@@ -1,4 +1,4 @@
-export default function Narrow({ className }) {
+export default function Narrow({ className }: { className: string}) {
   return (
       <svg className={className} viewBox="0 0 456 412" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M74.1238 96.1793C80.4856 94.5159 86.9991 93.1287 93.5623 92.4451C96.1827 92.1721 98.7618 92.073 101.308 91.4768C105.193 90.5672 108.967 90.4839 112.865 89.9216" stroke="black" strokeWidth="3" strokeLinecap="round"/>
