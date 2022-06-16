@@ -103,14 +103,9 @@ export default function Form() {
         </div>
 
         <div className="form-wrapper lg:w-1/2 sm:w-full">
-          <form 
-            method="POST"
-            data-netlify="true" 
-            name="contact-form"
-            id="contact-form" 
-            // onSubmit={submitHandler} 
-            className="form">
 
+          <form method="POST" data-netlify="true" name="contact"
+            id="contact-form" className="form">
 
             {
               contactFormFields.map(([id, placeholder]) => {
@@ -158,7 +153,7 @@ export default function Form() {
               שלח פרטים
             </button>
 
-            <input type="hidden" name="contact-form" value="contact" />
+            <input type="hidden" name="contact" value="contact" />
           </form>
 
         </div>
