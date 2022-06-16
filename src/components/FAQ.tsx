@@ -7,7 +7,7 @@ import * as React from 'react';
 export default function FAQ() {
 
   return (
-    <section className="noise-bg pb-32">
+    <section id="faq" className="noise-bg pb-32">
       <div className="px-8 pt-14 max-w-2xl mx-auto cursor-default">
 
       <svg width="90" height="66" viewBox="0 0 90 66" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,7 +49,7 @@ export default function FAQ() {
         </Accordion>
 
         <Accordion title="מה אם איני מרוצה?">
-          אתם לא מתחייבים לשום-דבר. אתם מוזמנים להפסיק את המנוי בכל עת.
+          אם אינכם מרוצים מהשירות, ניתן לקבל החזר 100% עד 14 ימים. עד היום, לא היו לי בקשות להחזר.
         </Accordion>
 
       </div>

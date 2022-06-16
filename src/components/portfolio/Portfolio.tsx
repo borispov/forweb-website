@@ -42,12 +42,15 @@ const portfolioData: Project[] = [
 
 export default function Portoflio() {
   return (
-    <div className="space-x mt-8">
+    <div id="work" className="space-x mt-8 mb-24">
       <div className="grid md:grid-cols-2 grid-cols-1 gap-5 md:gap-8">
-        {
+         {
           portfolioData.map(project => (
-            <AnimationOnScroll animateOnce animateIn="animate__fadeIn duration-500" className="animate__animated animate__fadeIn animate__once project-item rounded-lg shadow-2xl w-auto lg:max-w-md max-w-screen-sm mx-4">
-              <div className="animate__animated animate__fadeIn animate__once project-item rounded-lg shadow-2xl w-auto lg:max-w-md max-w-screen-sm mx-4">
+              <div className="
+                transition-all hover:shadow-primary-200
+                project-item rounded-lg shadow-2xl w-auto lg:max-w-md max-w-screen-sm mx-4"
+                >
+                <AnimationOnScroll animateOnce animateIn="animate__fadeInUp">
                 {/* <div className="w-16 h-16 bg-primrary-300 rounded-lg"> */}
                   <Image 
                     className="rounded-lg"
@@ -62,11 +65,11 @@ export default function Portoflio() {
                   <h3 className="text-xl text-gray-700">{project.projectName}</h3>
                   <h4 className="text-lg text-gray-600 font-normal">{project.typeOfWork}</h4>
                 </div>
+                </AnimationOnScroll>
 
 
               </div>
 
-            </AnimationOnScroll>
           ))
         }
       </div>

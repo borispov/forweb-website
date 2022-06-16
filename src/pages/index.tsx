@@ -36,7 +36,7 @@ const Home: NextPage = () => {
           <h4 className="texl-3xl text-secondary">למה אנחנו</h4>
           <h2 className="text-6xl">ובמה אנחנו שונים מכל השאר?</h2>
 
-          <div className="md:grid md:grid-cols-3 pt-10 sm:flex sm:flex-col max-w-5xl mx-auto">
+          <div className="md:grid md:grid-cols-3 pt-16 sm:flex sm:flex-col max-w-5xl mx-auto">
 
             <div className="bg-unique1 unique1-shadow rounded-lg flex flex-col max-w-sm text-gray-100 p-4 md:p-10 md:mx-4 md:my-0 my-4 mx-auto">
             <h3 className="text-white">אנחנו מבינים עניין</h3>
@@ -68,7 +68,7 @@ const Home: NextPage = () => {
           </div>
 
           <div className="max-w-md mx-auto pt-14 pb-32 relative">
-            <p className="text-sm max-w-sm text-red-700 mb-4">
+            <p className="text-sm max-w-sm text-red-700 mb-4 mx-auto">
               בסופו של דבר, אתם מקבלים אתר/חנות/אפליקציה שעושה בדיוק את מה שהעסק והלקוחות שלכם צריכים.
             </p>
             <Link href="#contact-form">
@@ -90,8 +90,8 @@ const Home: NextPage = () => {
       <ProcessSection />
       <PricingSection />
       
-      <div className="flex flex-col items-center space-y">
-        <h1 className="thick-underline text-5xl">חברים מספרים</h1>
+      <div className="flex flex-col items-center pb-24">
+        {/* <h1 className="thick-underline text-5xl">חברים מספרים</h1> */}
         <div className="flex flex-col lg:flex-row mt-12 gap-y-8 lg:gap-y-0 mb-24">
           <div className="review__card">
             <Image src="/quotes.png" alt="quotes icon" width={54} height={48} objectFit="contain"/>
@@ -113,7 +113,7 @@ const Home: NextPage = () => {
       </div>
 
 
-      <h1 className="text-center text-5xl thick-underline">PORTFOLIO</h1>
+      <h1 className="text-center w-80 mx-auto text-5xl thick-underline">PORTFOLIO</h1>
       <Portoflio />
       <Form />
       <FAQ />

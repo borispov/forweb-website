@@ -17,6 +17,7 @@ function PricingItem({ pkg }: IPricingItemProps ) {
 
   return (
     <div 
+      id="pricing"
       className={clsxm(
         'grid-item flex flex-col justify-between',
         'p-8 font-bold',

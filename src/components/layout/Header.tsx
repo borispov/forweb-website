@@ -60,7 +60,7 @@ function NavbarItem({children, href, cx}: {cx?: string, href: string, children: 
 }
 
 
-export default function Header({ layoutVariation = 'new'}) {
+export default function Header({ layoutVariation = 'old'}) {
 
   const originalVariation = () => (
     NavbarData.links.map((item, i) => {
@@ -103,7 +103,7 @@ export default function Header({ layoutVariation = 'new'}) {
     <header className='navbar sm:justify-between grid md:justify-center h-32'>
         <div className='hidden md:flex lg:max-w-5xl items-center'>
         {
-          layoutVariation === 'old' &&
+          layoutVariation === 'new' &&
             newVariation() || originalVariation()
         }
       </div>

@@ -192,12 +192,13 @@
     position: absolute;
     background-position: center center;
     background-repeat: no-repeat;
+    background-size: 75%;
   }
 
   .scrib__menu {
     width: 308px;
     height: 276px;
-    top: 15%;
+    top: 28%;
     z-index: 1;
     left: 20%;
   }

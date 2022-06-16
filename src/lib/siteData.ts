@@ -1,6 +1,7 @@
 export const HeroSectionData = {
   title: "UNFOLD.YOUR.VISION.",
   subtitle: "עיצוב ופיתוח תפור לחזון העסקי שלכם,ושיווק שהופך את האהבה שלך לפרנסה.",
+  subtitle_v2: "עיצוב ופיתוח תפור לחזון העסקי שלכם. מחירים נוחים, קבועים ללא הפתעות.",
   cta_text: "Let's Talk",
   svg_1: "assets/svgs/hero__1.svg", // it points to public folder
   svg_2: "assets/svgs/hero__2.svg",
@@ -9,10 +10,10 @@ export const HeroSectionData = {
 
 export const NavbarData = {
   links: [
-    { href: '/', label: 'עבודות' },
-    { href: '/', label: 'מחירון' },
-    { href: '/', label: 'שירותים' },
-    { href: '/', label: 'יצירת קשר' },
+    { href: '#work', label: 'עבודות' },
+    { href: '#pricing', label: 'מחירון' },
+    { href: '#faq', label: 'שאלות' },
+    { href: '#process', label: 'תהליך' },
   ],
   logoPath: "/assets/logo.svg",
 }

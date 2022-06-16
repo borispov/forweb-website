@@ -10,34 +10,22 @@ import WormScrib from "@/icons/WormScrib";
 
 const state = [
   {
-    title: 'שלב אפיון וגילוי',
+    title: 'אפיון',
     subtitle: 'מיפוי צרכי העסק',
-    description: 'בשלב זה אנו עורכים פגישה לאיסוף נתונים והבנתם ותכנון התכנית',
+    description: 'פגישת ייעוץ ואיסוף מידע ותכנון תכנית העבודה',
     stepNumber: 1,
   },
   {
-    title: 'עיצוב',
-    subtitle: 'עיצוב ב- Figma',
-    description: 'בשלב זה אנו עורכים פגישה לאיסוף נתונים והבנתם ותכנון התכנית',
+    title: 'עיצוב ופיתוח',
+    subtitle: 'עיצוב ב- Figma, פיתוח ב- Webflow',
+    description: 'עיצוב ופיתוח בהתאם לשלב הראשון. פיתוח מקצועי איכותי וזריז',
     stepNumber: 2,
   },
   {
-    title: 'פיתוח',
-    subtitle: 'פיתוח ',
-    description: 'פיתוח אתר תדמית אורך כשלושה שבועות. פיתוח חנות עד חודשיים.',
+    title: 'ליטוש אחרון',
+    subtitle: 'טאץ׳ אחרון ו...',
+    description: 'נגיעות אחרונות, חיבור לאחסון ודומיין',
     stepNumber: 3,
-  },
-  {
-    title: 'הדרכה ותמיכה',
-    subtitle: 'ולא פחות חשוב',
-    description: 'מתן הדרכה והסברים מקיפים אודות האתר/המערכת החדשה שלכם.',
-    stepNumber: 4,
-  },
-  {
-    title: 'צא לאור!',
-    subtitle: '״איך אתר נולד...״ - מזל טוב!',
-    description: 'חיבור את האתר ל Domain, בסביבת האחסון הרצויה ומשיקים את האתר בזמן הנוח והמתאים עבורכם.',
-    stepNumber: 5,
   },
 ]
 
@@ -59,7 +47,9 @@ interface ProcessItemProps {
 // Single Process Item Component
 function ProcessItem({ item, num }: ProcessItemProps) {
   return (
-    <div className={clsxm(
+    <div 
+      id="process"
+      className={clsxm(
       "bg-primary-100 max-w-screen-sm mx-4 lg:max-w-2xl flex border-2 border-black shadow-lg mt-4 rounded-l-xl text-right mb-16",
       "relative",
       [
@@ -93,7 +83,7 @@ export default function ProcessSection() {
         <h1 className="text-4xl text-[#333] mb-4">
           לתת לעסק שלך לצמוח עם
           <br/>
-          5 שלבים פשוטים
+          3 שלבים פשוטים
         </h1>
         <h2 className="text-[18px] font-bold text-[#333333CF]">
           קצר, פשוט ויעיל
@@ -103,7 +93,7 @@ export default function ProcessSection() {
           <ThreeLinesIcon className="absolute left-0 -top-20" />
         </AnimationOnScroll>
 
-        <AnimationOnScroll animateOnce animateIn="animate__slideInLeft">
+        <AnimationOnScroll animateOnce animateIn="animate__fadeInUp animate__delay-1s">
           <RedCircleWithLinesIcon className="absolute left-5 top-20 z-0" />
         </AnimationOnScroll>
 
@@ -117,9 +107,7 @@ export default function ProcessSection() {
           }
         </div>
 
-        <h3 className="mt-24 lg:mt-12 mx-auto">
-          וזכרו כי אנו אתכם בכל שלב
-        </h3>
+        <h2 className="mt-4">ההצלחה שלכם היא ההצלחה שלנו</h2>
       </div>
     </div>
   )
