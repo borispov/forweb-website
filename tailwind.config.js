@@ -20,12 +20,18 @@ module.exports = {
         'work': ['Work Sans'],
         'arial': ['Arial']
       },
+      transitionProperty: {
+        "height": "height",
+        "max-height": "max-height",
+        "spacing": "margin, padding",
+      },
       boxShadow: {
         DEFAULT: '6px 6px 0 0 #494949',
         'sm': '2px 2px 0 0 rgb(0 0 0 / 1)',
         'md': '4px 4px 0 0 rgb(0 0 0 / 1)',
         'lg': '6px 6px 0 0 rgb(0 0 0 / 1)',
         'xl': '9px 9px 0 0 rgb(0 0 0 / 1)',
+        'sm-reg': '0px 3px 0 9px rgb( 19 19 19 / 0.18)',
       },
       colors: {
         primary: {
@@ -75,7 +81,7 @@ module.exports = {
       animation: {
         flicker: 'flicker 3s linear infinite',
         shimmer: 'shimmer 1.3s linear infinite',
-        fadeIn: 'fadeIn 2s ease-in forwards'
+        fadeIn: 'fadeIn 500ms ease-in-out',
       },
     },
   },

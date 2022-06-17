@@ -127,9 +127,22 @@
   }
 
 
+  /* BUTTONS  */
+
   .primary-button {
     @apply py-2 px-14 text-center font-bold border-2 border-black;
-    /* box-shadow: 4px 4px 2px 0 #494949; */
+  }
+
+  .primary-button-lg {
+    @apply px-20 py-3 text-center font-bold border-2 border-black;
+    @apply hover:bg-primary-300 transition-all hover:text-[#191919];
+  }
+
+  .button-hover-sm-diagonal {
+    @apply hover:-translate-y-0.5;
+    @apply hover:-translate-x-0.5; 
+    @apply hover:shadow-lg hover:transition-all hover:ease-out;
+    @apply transition-all ease-in-out; 
   }
 
   .button-hover-sm {
@@ -137,11 +150,12 @@
   }
 
   .button-hover-lg {
-    @apply hover:-translate-y-1 hover:shadow-xl transition-all ease-in hover:shadow-gray-300;
+    @apply transition-all hover:transition-all ease-in-out hover:ease-in-out;
+    @apply hover:-translate-y-1 hover:shadow-xl hover:shadow-gray-300;
   }
 
   .black-button {
-    @apply primary-button border-none shadow-lg text-2xl shadow-gray-300 py-6 px-16 text-white;
+    @apply primary-button border-none shadow-lg text-2xl shadow-gray-300 py-6 px-16 text-primary-300;
   }
 
   .unique1-shadow {

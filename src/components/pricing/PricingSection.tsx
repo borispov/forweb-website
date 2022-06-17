@@ -1,12 +1,11 @@
-import clsxm from "@/lib/clsxm";
-
 import Link from 'next/link';
+import { AnimationOnScroll } from 'react-animation-on-scroll';
+
+import clsxm from "@/lib/clsxm";
 
 import PriceTag from "@/components/pricing/PriceTag";
 
 import { IPricingItemProps, pricingData } from './pricingData';
-
-import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 const CALENDLY_URL = 'https://calendly.com/borispov/consult';
 
@@ -110,7 +109,7 @@ export default function PricingSection() {
       <div className="flex justify-center flex-col items-center pt-12">
         <h2 className="text-center">לא מוצאים חבילה מתאימה? אין בעיה, נתאים לכם!</h2>
         <Link href="#contact-form">
-          <button className="mt-4 primary-button button-hover-sm pt-4 bg-primary-300 shadow-sm ">התאת חבילה</button>
+          <button className="mt-6 primary-button button-hover-sm py-4 bg-primary-300 shadow-sm ">התאת חבילה</button>
         </Link>
       </div>
 

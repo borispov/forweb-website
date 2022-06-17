@@ -1,6 +1,7 @@
-import clsxm from '@/lib/clsxm';
-import React, { SyntheticEvent, useCallback, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
+
+import clsxm from '@/lib/clsxm';
 
 function FormTextField({ children}: {children: React.ReactNode }) {
   return (
@@ -148,8 +149,11 @@ export default function Form() {
               type="submit" 
               className="black-button 
                 mb-4 mt-6 
-                bg-indigo-900 shadow-xl
-                hover:button-hover-lg">
+                bg-[#333]
+                text-primary-300
+                shadow-xl
+                hover:bg-unique3
+                button-hover-lg">
               שלח פרטים
             </button>
 

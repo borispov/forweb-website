@@ -1,6 +1,6 @@
-import clsxm from "@/lib/clsxm";
-
 import { AnimationOnScroll } from 'react-animation-on-scroll';
+
+import clsxm from "@/lib/clsxm";
 
 import BigSunIcon from "@/icons/BigSunIcon";
 import BirdsScribIcon from "@/icons/BirdsScribIcon";
@@ -78,7 +78,7 @@ function ProcessItem({ item, num }: ProcessItemProps) {
 export default function ProcessSection() {
   return (
     <div className="processes relative pb-12">
-      <BigSunIcon className="absolute right-0 top-1/3" />
+      <BigSunIcon className="absolute right-0 top-1/3 w-40 lg:w-auto" />
       <div className="container text-center pt-24">
         <h1 className="text-4xl text-[#333] mb-4">
           לתת לעסק שלך לצמוח עם

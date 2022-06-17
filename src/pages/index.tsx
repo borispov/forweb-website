@@ -1,17 +1,16 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 
+import FAQ from '@/components/FAQ';
 import Form from '@/components/form/Form';
 import Hero from '@/components/Hero';
 import Layout from '@/components/layout/Layout';
+import Portoflio from '@/components/portfolio/Portfolio';
 import PricingSection from '@/components/pricing/PricingSection';
 import ProcessSection from '@/components/process/ProcessSection';
 import ServicesSection from '@/components/services/ServicesSection';
-
-import FAQ from '@/components/FAQ';
-import Portoflio from '@/components/portfolio/Portfolio';
-import Link from 'next/link';
 // import Narrow from '../icons/Narrow';
 
 const Home: NextPage = () => {
@@ -72,7 +71,7 @@ const Home: NextPage = () => {
               בסופו של דבר, אתם מקבלים אתר/חנות/אפליקציה שעושה בדיוק את מה שהעסק והלקוחות שלכם צריכים.
             </p>
             <Link href="#contact-form">
-              <button className="primary-button text-3xl shadow-sm hover:shadow-lg rounded-lg relative">
+              <button className="primary-button text-3xl shadow-sm hover:shadow-lg rounded-lg relative button-hover-sm-diagonal">
                 בואו לעבוד יחד
                 <div className="scrib__btn-left w-6 h-10 bg-[url('/scribs/button-addon-left.svg')] absolute">
                 </div>

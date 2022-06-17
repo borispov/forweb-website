@@ -4,36 +4,22 @@ import React from "react";
 import clsxm from "@/lib/clsxm";
 import { NavbarData } from "@/lib/siteData";
 
-function HamburgerMenu() {
-  const [open, setOpen] = React.useState(false);
-  const [height, setHeight] = React.useState('0px');
-
-  // const contentSpace = React.useRef(document.createElement("div"))
-
-  const contentSpace = React.useRef<HTMLDivElement>(null);
-
-  const clickHandler = () => {
-    setOpen(!open);
-    if (contentSpace == undefined || contentSpace.current == undefined) {
-      return;
-    }
-    setHeight( open ? '0px' : `${contentSpace.current.scrollHeight * 10}px`);
-  } 
+function HamburgerMenu({ clickHandler }: { clickHandler: React.MouseEventHandler}) {
 
   return (
-    <div className="">
+    <div>
       <div 
-        onClick={clickHandler}
-        className="space-y-2">
-        <span className="block w-8 h-0.5 bg-gray-600"></span>
-        <span className="block w-8 h-0.5 bg-gray-600"></span>
-        <span className="block w-5 h-0.5 bg-gray-600"></span>
+        onClick={clickHandler}        className="space-y-2 block md:hidden cursor-pointer w-6 h-6 pt-2">
+        <span className="block w-10 h-[3px] bg-gray-500"></span>
+        <span className="block w-8 h-[3px] bg-gray-500"></span>
+        <span className="block w-6 h-[3px] bg-gray-500"></span>
       </div>
-      <div 
+
+      {/* <div 
         ref={contentSpace} 
         style={{ maxHeight: `${height}` }}
         className={clsxm(
-          "absolute w-screen bg-gray-700 opacity-0 z-10 space-y-4 right-0 left-0 mt-4",
+          "hidden absolute w-screen bg-gray-700 opacity-0 z-10 space-y-4 right-0 left-0 mt-4",
           "transition-all duration-700 opacity-100",
           "flex flex-col justify-evenly shadow-2xl"
       )}>
@@ -42,7 +28,7 @@ function HamburgerMenu() {
             <NavbarItem onClickHandler={clickHandler} key={item.label} cx="my-4 text-white hover:text-gray-100 hover:underline decoration-orange-300" href={item.href}>{item.label}</NavbarItem>
           ))
         }
-      </div>
+      </div> */}
     </div>
   )
 }
@@ -68,7 +54,22 @@ function NavbarItem({onClickHandler, children, href, cx}: {onClickHandler?: Reac
 }
 
 
-export default function Header({ layoutVariation = 'old'}) {
+export default function Header() {
+
+  const [open, setOpen] = React.useState(false);
+  const [height, setHeight] = React.useState('0px');
+
+  const contentSpace = React.useRef<HTMLDivElement>(null);
+
+  const clickHandler = () => {
+    setOpen(!open);
+    if (contentSpace == undefined || contentSpace.current == undefined) {
+      return;
+    }
+    setHeight( !open ? '0px' : `${contentSpace.current.scrollHeight + 20 }px`);
+  } 
+
+
 
   const originalVariation = () => (
     NavbarData.links.map((item, i) => {
@@ -90,41 +91,48 @@ export default function Header({ layoutVariation = 'old'}) {
     )
   )
 
-  const newVariation = () => {
-    const navbarContent = NavbarData.links.map((item, i) => (
-      <NavbarItem key={i} href={item.href}>{item.label}</NavbarItem>
-    ))
-
-    return (
-      <>
-        {navbarContent}
-        <Image 
-          className="mx-8 pt-5 align-bottom"
-          width={90} 
-          height={70} 
-          src="/logo-vertical.png" alt="forweb logo" />
-      </>
-    )
-  }
-
   return (
-    <header className='navbar sm:justify-between grid md:justify-center h-32'>
+    <header className='navbar sm:justify-between grid md:justify-center lg:h-32 lg:my-0'>
+        {/* This is Desktop view */}
         <div className='hidden md:flex lg:max-w-5xl items-center'>
-        {
-          layoutVariation === 'new' &&
-            newVariation() || originalVariation()
-        }
-      </div>
-      <nav className="md:hidden flex justify-between mx-4 items-center">
-        <HamburgerMenu/>
-        <div className="logo ml-4">
+          { originalVariation() }
+        </div>
+
+      {/* This Is Mobile  */}
+      <nav className="flex flex-wrap itesm-center justify-between w-full py-4 md:py-0 px-4 text-lg text-gray-700 bg-transparent">
+        <HamburgerMenu clickHandler={clickHandler}/>
+        <div className="logo">
           <Image 
             className="align-middle"
             width={120} 
             height={35} 
             src="/logo.png" alt="forweb logo" />
           </div>
+
+
       </nav>
+        <div 
+          ref={contentSpace}
+          className={clsxm(
+            'md:hidden',
+            'duration-300 overflow-hidden transition-max-height max-h-0',
+            'bg-gradient-to-b',
+            'from-white',
+            'via-primary-100/100',
+            'to-primary-300/5',
+            [ !open && 'hidden' || 'animate-fadeIn max-h-72' ],
+            "w-full md:flex md:items-center md:w-auto"
+        )}>
+          <ul className="text-base text-gray-700 pt-4 md:flex md:justify-between md:pt-0 pb-4">
+            {
+              NavbarData.links.map(item => (
+                <li key={item.label} className="py-2">
+                  <NavbarItem onClickHandler={clickHandler} cx="md:p-4 py-2 block hover:text-bg-primary-500" href={item.href}>{item.label}</NavbarItem>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
     </header>
   );
 }
