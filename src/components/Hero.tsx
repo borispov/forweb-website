@@ -1,14 +1,12 @@
 import Link from 'next/link';
 
-
 import { HeroSectionData } from '@/lib/siteData';
 
 import FaceDivider from '@/icons/FaceDivider';
 import PinkFloydTriangleIcon from '@/icons/PinkFloydTriangleIcon';
 import UpRightArrowIcon from '@/icons/UpRightArrowIcon';
 
-
-function Hero() {
+export default function Hero() {
   return (
     <div className="pt-6 lg:pt-48 md:pt-32 text-center noise-bg pb-12 relative">
       <h1 className="lg:text-7xl sm:text-4xl">
@@ -28,23 +26,20 @@ function Hero() {
       </div>
 
       <svg 
-        className='absolute animate__animated animate__fadeInRight lg:animate__fadeInLeft left-60 -bottom-24 lg:left-20 lg:top-1/2'
-        width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M138.3 92.2C143.5 103.5 137.3 123.2 120.1 138.1C103 153.1 74.8 163.3 61 153.4C47.3 143.4 48 113.4 56.9 96.9C65.8 80.4 82.9 77.5 99.7 77.6C116.6 77.7 133.1 80.8 138.3 92.2Z" fill="url(#paint0_linear_69_10)"/>
+        className='absolute overflow-hidden animate__animated animate__fadeInRight lg:animate__fadeInLeft -bottom-24 lg:left-20 lg:top-1/2'
+        width="91" height="81" viewBox="0 0 91 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M88.3 15.2C93.5 26.5 87.3 46.2 70.1 61.1C53 76.1 24.8 86.3 11 76.4C-2.69995 66.4 -1.99995 36.4 6.90005 19.9C15.8 3.4 32.9 0.500002 49.7 0.600002C66.6 0.700002 83.1 3.8 88.3 15.2Z" fill="url(#paint0_linear_182_116)"/>
         <defs>
-        <linearGradient id="paint0_linear_69_10" x1="95.2553" y1="77.5975" x2="95.2553" y2="157.326" gradientUnits="userSpaceOnUse">
+        <linearGradient id="paint0_linear_182_116" x1="45.2553" y1="0.597549" x2="45.2553" y2="80.3255" gradientUnits="userSpaceOnUse">
         <stop stopColor="#F11BC2"/>
         <stop offset="0.942708" stopColor="#9020E9" stopOpacity="0.74"/>
         </linearGradient>
         </defs>
-      </svg>
+      </svg> 
 
 
-      <PinkFloydTriangleIcon className="animate__animated animate__fadeInLeft lg:animate__fadeInUp absolute right-3/4 -bottom-32 lg:right-40 lg:-bottom-20 w-32 z-10" />
+      <PinkFloydTriangleIcon className="absolute overflow-hidden animate__animated animate__fadeInLeft lg:animate__fadeInUp right-3/4 -bottom-32 lg:right-40 lg:-bottom-20 w-32 z-10" />
       <FaceDivider className="mx-auto pt-12 mt-6 animate__animated animate__fadeInDown animate__once" />
     </div>
   )
 }
-
-
-export default Hero;

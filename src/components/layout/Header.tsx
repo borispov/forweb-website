@@ -115,13 +115,13 @@ export default function Header({ layoutVariation = 'old'}) {
             newVariation() || originalVariation()
         }
       </div>
-      <nav className="md:hidden flex justify-between mx-4 items-center -mt-10">
+      <nav className="md:hidden flex justify-between mx-4 items-center">
         <HamburgerMenu/>
-        <div className="logo -ml-16">
+        <div className="logo ml-4">
           <Image 
             className="align-middle"
-            width={315} 
-            height={200} 
+            width={120} 
+            height={35} 
             src="/logo.png" alt="forweb logo" />
           </div>
       </nav>

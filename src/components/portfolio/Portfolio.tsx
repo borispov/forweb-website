@@ -48,16 +48,19 @@ export default function Portoflio() {
               <div 
                 key={project.projectName}
                 className="
-                  transition-all hover:shadow-primary-200
+                  hover:shadow-primary-200
                   project-item rounded-lg shadow-2xl w-auto lg:max-w-md max-w-screen-sm mx-4"
                 >
                   <Image 
                     className="rounded-lg"
                     src={project.imagePath} 
                     alt={project.projectName} 
+                    priority
                     width={487} 
+                    // width={320} 
+                    // height={185} 
                     height={300} 
-                    // layout='responsive'
+                    layout='intrinsic'
                   />
                 <div className="mt-4 p-6 text-center">
                   <h3 className="text-xl text-gray-700">{project.projectName}</h3>
