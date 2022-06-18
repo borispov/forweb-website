@@ -101,7 +101,7 @@ export default function Header() {
       {/* This Is Mobile  */}
       <nav className="flex flex-wrap itesm-center justify-between w-full py-4 md:py-0 px-4 text-lg text-gray-700 bg-transparent">
         <HamburgerMenu clickHandler={clickHandler}/>
-        <div className="logo">
+        <div className="logo md:hidden">
           <Image 
             className="align-middle"
             width={120} 

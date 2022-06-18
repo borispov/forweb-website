@@ -38,10 +38,7 @@ const servicesCards:BenefitCard[] = [
     text: "להפוך את העסק שלכם לעסק אמיתי שמזרים הכנסות ורווחים באמצעות שיווק ממומן.",
     iconPath: "",
   }
-
-  
 ]
-
 
 const easyServices = [
   ['אפיון וייעוץ', 'מותאמים לעסק'],
@@ -60,7 +57,7 @@ export default function ServicesGrid() {
 
   return (
     <div className="pb-12 p-6 xl:mr-0 md:mr-12 pr-10 mt-16 bg-primary-300 rounded-lg w-full md:w-3/5 xl:w-4/5">
-      <RainDropsIcon className="opacity-75 md:visible invisible absolute md:right-8 xl:right-28 bottom-1/2"/>
+      <RainDropsIcon className="opacity-75 md:visible invisible absolute md:left-8 xl:right-28 bottom-1/2"/>
       <StarsIcon className="absolute right-8 bottom-4 lg:right-28 lg:bottom-20 lg:opacity-25"/>
       {
         oldVar && servicesCards.map((benefit) => (
@@ -75,9 +72,9 @@ export default function ServicesGrid() {
           </div>
         )) || easyServices.map((service, i) => {
           return (
-            <div key={i} className="text-lg leading-loose">
+            <div key={i} className="text-base leading-loose">
               <strong>{service[0] + ' '}</strong>
-              <span className="text-lg font-normal">
+              <span className="text-base font-normal">
                 {service[1]}
               </span>
             </div>

@@ -138,7 +138,7 @@ export default function Form() {
             onSubmit={submitHandler}
             name="contact"
             id="contact-form" 
-            className="form">
+            className="form mb-4">
 
             {
               contactFormFields.map(([id, placeholder, testid]) => {
@@ -195,6 +195,14 @@ export default function Form() {
                   { formState.message }
             </button>
           </form>
+
+          <a href={process.env.CALENDLY_URL}>
+            <p className="text-indigo-600 text-center underline text-base font-bold">* לנוחיותכם, ניתן לקבוע פגישה כאן</p>
+          </a>
+          
+          <a className="" href="https://wa.me/+972508564794">
+            <p className="text-center text-base underline text-black">או לשלוח הודעה ב WhatsApp</p>
+          </a>
         </div>
       </div>
     </section>
