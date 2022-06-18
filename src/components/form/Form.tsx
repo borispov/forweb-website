@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { SyntheticEvent, useCallback, useState } from 'react';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 import clsxm from '@/lib/clsxm';
@@ -12,22 +12,33 @@ function FormTextField({ children}: {children: React.ReactNode }) {
 }
 
 interface FormValues {
-  firstName: string;
-  lastName: string;
+  fullName: string;
+  companyName: string;
   email: string;
-  phoneNum: string;
   budgetEst: string;
+  deadlineEst: string;
   message?: string;
 }
 
+type SuccessState = { state: "success", message: "הטופס נשלח בהצלחה!" }
+type FailureState = { state: "failed", message: "שגיאה... נסה שנית" }
+type LoadingState = { state: "loading", message: "שולח..." }
+type InitState = { state: "init", message: "שלח פרטים" }
+
+type FormState =
+  | SuccessState
+  | FailureState
+  | LoadingState
+  | InitState
+
 // This is for programmatic rendering of form fields, easier to change fields from here
 const contactFormFields = [
-  [ 'fullName', 'שם מלא *'],
-  [ 'companyName', 'שם החברה *'],
-  [ 'email', 'כתובת דוא״ל *'],
-  [ 'budgetEst', 'תקציב משוער *'],
-  [ 'deadlineEst', 'צפי משוער לסיום הפרויקט *'],
-  [ 'message', 'נשמח לשמוע על הפרויקט שתרצו לעבוד עליו, או כל דבר שתרצו לשתף איתנו.'],
+  [ 'fullName', 'שם מלא *', 'name-input'],
+  [ 'companyName', 'שם החברה *', 'company-input'],
+  [ 'email', 'כתובת דוא״ל *', 'email-input'],
+  [ 'budgetEst', 'תקציב משוער *', 'budget-select'],
+  [ 'deadlineEst', 'צפי משוער לסיום הפרויקט *', 'deadline-input'],
+  [ 'message', 'נשמח לשמוע על הפרויקט שתרצו לעבוד עליו, או כל דבר שתרצו לשתף איתנו.', 'message-input'],
 ]
 
 type Option = {
@@ -36,19 +47,19 @@ type Option = {
 }
 
 const options:Option[] = [
-  { label: '< 3,000₪', value: '< 3,000₪' },
-  { label: '3,000₪ - 6,000₪', value: '3,000₪ - 6,000₪'},
-  { label: '6,000₪ - 15,000₪', value: '6,000₪ - 15,000₪'},
-  { label: '15,000₪ +', value: '15,000₪ +'},
+  { label: '< 3,000₪', value: '3000' },
+  { label: '3,000₪ - 6,000₪', value: '3000-6000'},
+  { label: '6,000₪ - 15,000₪', value: '6000-15000'},
+  { label: '15,000₪ +', value: '15000+'},
 ]
 
 
 const initialFormData = {
-  firstName: '',
-  lastName: '',
+  fullName: '',
+  companyName: '',
   email: '',
-  phoneNum: '',
   budgetEst: '',
+  deadlineEst: '',
   message: '',
 }
 
@@ -57,18 +68,36 @@ export default function Form() {
   
   const [ formData, formDataSet ] = useState<FormValues>(initialFormData);
 
-  // async function submitHandler(e:SyntheticEvent) {
-  //   e.preventDefault();
-  // } 
+  const [ formState, setFormState ] = useState<FormState>({ state: 'init', message: 'שלח פרטים' });
+
+  async function submitHandler(e:SyntheticEvent) {
+    e.preventDefault();
+    
+    setFormState({ state: 'loading', message: 'שולח...'})
+
+    console.log(formData);
+
+    const response = await fetch('/api/contact', {
+      method: "POST",
+      body: JSON.stringify(formData)
+    });
+
+    if (response.status === 200) {
+      setFormState({ state: 'success', message: 'הטופס נשלח בהצלחה!'});
+    } else {
+      setFormState({ state: 'failed', message: 'שגיאה... נסה שנית'});
+      setTimeout(() => setFormState({ state: 'init', message: 'שלח פרטים'}), 3000);
+    }
+  } 
 
 
-  function inputChangeHandler(e: React.FormEvent<HTMLInputElement>) {
+  function inputChangeHandler(e: React.FormEvent<HTMLInputElement | HTMLSelectElement>) {
     if (e===null) return;
     e.preventDefault();
     const inputName = e.currentTarget.name;
     formDataSet({
       ...formData,
-      [inputName]: e.currentTarget.value,
+      [inputName || 'budgetEst']: e.currentTarget.value,
     })
   }
   const changeInput = useCallback(inputChangeHandler, [formData])
@@ -105,11 +134,14 @@ export default function Form() {
 
         <div className="form-wrapper lg:w-1/2 sm:w-full">
 
-          <form method="POST" data-netlify="true" name="contact"
-            id="contact-form" className="form">
+          <form  
+            onSubmit={submitHandler}
+            name="contact"
+            id="contact-form" 
+            className="form">
 
             {
-              contactFormFields.map(([id, placeholder]) => {
+              contactFormFields.map(([id, placeholder, testid]) => {
 
                 return (
                   <div key={id}>
@@ -117,7 +149,10 @@ export default function Form() {
                     {
                       id === 'budgetEst' && (
                         <select 
-                          onSelect={(e) => formDataSet({ ...formData, budgetEst: e.currentTarget.value})}
+                          aria-label="select"
+                          data-testid={testid}
+                          // onSelect={(e) => formDataSet({ ...formData, 'budgetEst': e.currentTarget.value})}
+                          onChange={changeInput}
                           className="rounded-sm h-10 py-2 px-3 mb-3 
                             bg-white text-gray-600 text-sm 
                             w-full
@@ -132,7 +167,9 @@ export default function Form() {
                         </select> 
                       )
                       || (<input
+                            data-testid={testid}
                             onChange={changeInput}
+                            aria-label="text-input"
                             required
                             type={id === 'message' ? 'textarea' : 'text'}
                             name={id}
@@ -147,6 +184,7 @@ export default function Form() {
             
             <button 
               type="submit" 
+              data-testid="submit-button-test"
               className="black-button 
                 mb-4 mt-6 
                 bg-[#333]
@@ -154,16 +192,11 @@ export default function Form() {
                 shadow-xl
                 hover:bg-unique3
                 button-hover-lg">
-              שלח פרטים
+                  { formState.message }
             </button>
-
-            <input type="hidden" name="contact" value="contact" />
           </form>
-
         </div>
-
       </div>
-
     </section>
   )
 }
