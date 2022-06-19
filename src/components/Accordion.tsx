@@ -1,5 +1,6 @@
-import clsxm from '@/lib/clsxm';
 import React, { useRef, useState } from 'react';
+
+import clsxm from '@/lib/clsxm';
 
 interface AccordionProps {
   title: string;

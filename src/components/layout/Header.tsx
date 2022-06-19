@@ -11,9 +11,14 @@ function HamburgerMenu({ clickHandler, cx }: { clickHandler: React.MouseEventHan
       <div 
         onClick={clickHandler}        
         className={cx}>
-        <span className="block w-10 h-[3px] bg-gray-500"></span>
+          <svg viewBox="0 0 100 80" width="30" height="30">
+            <rect width="95" height="10" rx="8"></rect>
+            <rect y="30" width="85" height="10" rx="8"></rect>
+            <rect y="60" width="100" height="10" rx="8"></rect>
+          </svg>
+        {/* <span className="block w-10 h-[3px] bg-gray-500"></span>
         <span className="block w-8 h-[3px] bg-gray-500"></span>
-        <span className="block w-6 h-[3px] bg-gray-500"></span>
+        <span className="block w-6 h-[3px] bg-gray-500"></span> */}
       </div>
 
       {/* <div 
@@ -58,16 +63,9 @@ function NavbarItem({onClickHandler, children, href, cx}: {onClickHandler?: Reac
 export default function Header() {
 
   const [open, setOpen] = React.useState(false);
-  const [height, setHeight] = React.useState('0px');
-
-  const contentSpace = React.useRef<HTMLDivElement>(null);
 
   const clickHandler = () => {
     setOpen(!open);
-    if (contentSpace == undefined || contentSpace.current == undefined) {
-      return;
-    }
-    setHeight( !open ? '0px' : `${contentSpace.current.scrollHeight + 20 }px`);
   } 
 
 
@@ -101,7 +99,7 @@ export default function Header() {
 
       {/* This Is Mobile  */}
       <nav className="flex flex-wrap items-center justify-between w-full py-4 lg:py-0 px-4 text-lg text-gray-700 bg-transparent">
-        <HamburgerMenu clickHandler={clickHandler} cx="space-y-2 block lg:hidden cursor-pointer w-6 h-6 pt-2" />
+        <HamburgerMenu clickHandler={clickHandler} cx="block lg:hidden cursor-pointer" />
         <div className="lg:hidden">
           <Image 
             className="align-middle"
@@ -111,10 +109,9 @@ export default function Header() {
           </div>
       </nav>
         <div 
-          ref={contentSpace}
           className={clsxm(
             'lg:hidden',
-            'duration-300 overflow-hidden transition-max-height max-h-0',
+            'duration-300 overflow-hidden transition-max-height max-h-0 hover:transition-max-height hover:duration-200',
             'bg-gradient-to-b',
             'from-white',
             'via-primary-100/100',

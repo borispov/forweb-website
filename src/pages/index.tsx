@@ -1,5 +1,4 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import Image from 'next/image';
 
 import FAQ from '@/components/FAQ';
@@ -9,20 +8,16 @@ import Layout from '@/components/layout/Layout';
 import Portoflio from '@/components/portfolio/Portfolio';
 import PricingSection from '@/components/pricing/PricingSection';
 import ProcessSection from '@/components/process/ProcessSection';
+import Seo from '@/components/Seo';
 import ServicesSection from '@/components/services/ServicesSection';
 // import Narrow from '../icons/Narrow';
 
 const Home: NextPage = () => {
   return (
     <Layout>
-      <Head>
-        <title>Forweb - Boutique Web Design & Development</title>
-        <meta name="description" content="Your place for all things web. Design, Development, and Marketing for Small Businesses" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Seo />
 
       <Hero />
-
 
       {/* Benefits Section */}
       <section className="mx-4 md:mx-12 text-center relative">

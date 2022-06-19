@@ -75,8 +75,6 @@ export default function Form() {
     
     setFormState({ state: 'loading', message: 'שולח...'})
 
-    console.log(formData);
-
     const response = await fetch('/api/contact', {
       method: "POST",
       body: JSON.stringify(formData)
