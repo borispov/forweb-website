@@ -4,12 +4,13 @@ import React from "react";
 import clsxm from "@/lib/clsxm";
 import { NavbarData } from "@/lib/siteData";
 
-function HamburgerMenu({ clickHandler }: { clickHandler: React.MouseEventHandler}) {
+function HamburgerMenu({ clickHandler, cx }: { clickHandler: React.MouseEventHandler, cx: string}) {
 
   return (
     <div>
       <div 
-        onClick={clickHandler}        className="space-y-2 block md:hidden cursor-pointer w-6 h-6 pt-2">
+        onClick={clickHandler}        
+        className={cx}>
         <span className="block w-10 h-[3px] bg-gray-500"></span>
         <span className="block w-8 h-[3px] bg-gray-500"></span>
         <span className="block w-6 h-[3px] bg-gray-500"></span>
@@ -92,29 +93,27 @@ export default function Header() {
   )
 
   return (
-    <header className='navbar sm:justify-between grid md:justify-center lg:h-32 lg:my-0'>
+    <header className='navbar sm:justify-between grid lg:justify-center lg:h-32 lg:my-0'>
         {/* This is Desktop view */}
-        <div className='hidden md:flex lg:max-w-5xl items-center'>
+        <div className='hidden lg:flex lg:max-w-5xl items-center'>
           { originalVariation() }
         </div>
 
       {/* This Is Mobile  */}
-      <nav className="flex flex-wrap itesm-center justify-between w-full py-4 md:py-0 px-4 text-lg text-gray-700 bg-transparent">
-        <HamburgerMenu clickHandler={clickHandler}/>
-        <div className="logo md:hidden">
+      <nav className="flex flex-wrap items-center justify-between w-full py-4 lg:py-0 px-4 text-lg text-gray-700 bg-transparent">
+        <HamburgerMenu clickHandler={clickHandler} cx="space-y-2 block lg:hidden cursor-pointer w-6 h-6 pt-2" />
+        <div className="lg:hidden">
           <Image 
             className="align-middle"
             width={120} 
             height={35} 
             src="/logo.png" alt="forweb logo" />
           </div>
-
-
       </nav>
         <div 
           ref={contentSpace}
           className={clsxm(
-            'md:hidden',
+            'lg:hidden',
             'duration-300 overflow-hidden transition-max-height max-h-0',
             'bg-gradient-to-b',
             'from-white',

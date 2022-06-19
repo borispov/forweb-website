@@ -1,7 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import Link from 'next/link';
 
 import FAQ from '@/components/FAQ';
 import Form from '@/components/form/Form';
@@ -66,11 +65,11 @@ const Home: NextPage = () => {
 
           </div>
 
-          <div className="max-w-md mx-auto pt-14 pb-32 relative">
+          <div className="max-w-md mx-auto pt-14 pb-10 relative">
             <p className="text-sm max-w-sm text-red-700 mb-4 mx-auto">
               בסופו של דבר, אתם מקבלים אתר/חנות/אפליקציה שעושה בדיוק את מה שהעסק והלקוחות שלכם צריכים.
             </p>
-            <Link href="#contact-form">
+            {/* <Link href="#contact-form">
               <button className="primary-button text-3xl shadow-sm hover:shadow-lg rounded-lg relative button-hover-sm-diagonal">
                 בואו לעבוד יחד
                 <div className="scrib__btn-left w-6 h-10 bg-[url('/scribs/button-addon-left.svg')] absolute">
@@ -78,7 +77,7 @@ const Home: NextPage = () => {
                 <div className="scrib__btn-right w-6 h-10 bg-[url('/scribs/button-addon-right.svg')] absolute">
                 </div>
               </button>
-            </Link>
+            </Link> */}
           </div>
 
         </div>

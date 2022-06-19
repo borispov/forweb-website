@@ -9,7 +9,7 @@ import PinkFloydTriangleIcon from '@/icons/PinkFloydTriangleIcon';
 export default function Hero() {
   return (
     <div className="pt-20 lg:pt-48 md:pt-32 text-center noise-bg pb-12 relative">
-      <h1 className="lg:text-7xl text-3xl">
+      <h1 className="lg:text-7xl text-2xl md:text-4xl font-serif">
         <span className='thick-underline'>{HeroSectionData.title}</span>
       </h1>
       <h4 className="lg:text-2xl text-xl max-w-xl mx-auto pt-6">{HeroSectionData.subtitle_v2}</h4>
@@ -17,7 +17,9 @@ export default function Hero() {
         <Link href="#contact-form">
 
 
-          <button className="mt-6 primary-button lg:text-3xl lg:primary-button-lg button-hover-sm py-4 bg-[#333] text-primary-300 shadow-sm ">מחירון <span className='pr-2'>&darr;</span></button>
+          <button 
+            className="
+            mt-2 primary-button lg:text-3xl lg:primary-button-lg button-hover-sm py-4 bg-[#333] text-primary-300 shadow-sm ">מחירון <span className='pr-2'>&darr;</span></button>
 
           {/* <button className="
           px-12 lg:px-20 lg:py-6 py-[10px] bg-black flex justify-between gap-5 flex-row-reverse items-center mx-auto 

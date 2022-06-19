@@ -6,7 +6,7 @@ export default function ServicesSection() {
       px-6 lg:px-40 xl:px-80 pb-32 relative lg:pt-16 pt-4">
 
         <div className="animate__animated animate__fadeInUp lg:scrib lg:scrib__menu lg:bg-[url('/scribs/menu.png')]"></div>
-        <h1 className="text-5xl pt-20 max-w-md text-center">
+        <h1 className="text-5xl pt-12 max-w-md text-center">
           מה אנחנו מגישים?
         </h1>
         {/* Add The Icons Here */}
