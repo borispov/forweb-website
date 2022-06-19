@@ -81,6 +81,7 @@ export default function Header() {
                 className="mx-8 pt-5 align-bottom"
                 width={90} 
                 height={70} 
+                priority
                 src="/logo-vertical.png" alt="forweb logo" />
             </div>
           </nav>
@@ -105,6 +106,7 @@ export default function Header() {
             className="align-middle"
             width={120} 
             height={35} 
+            priority
             src="/logo.png" alt="forweb logo" />
           </div>
       </nav>
