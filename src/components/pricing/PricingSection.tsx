@@ -61,12 +61,14 @@ function PricingItem({ pkg }: IPricingItemProps ) {
       <a 
         href="#contact-form"
         className={clsxm(
+        'start-here', 
         'black-button mx-auto w-10/12 py-6 rounded-lg mt-6', 
         'bg-black text-white shadow-sm shadow-gray-300',
         'button-hover-lg'
         )}
         >התחל כאן</a>
       <a href={CALENDLY_URL} className={clsxm(
+        'book-here', 
         'font-work mx-auto underline font-light pt-4 tracking-wider',
         'text-black'
         )}

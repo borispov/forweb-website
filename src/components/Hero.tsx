@@ -18,6 +18,7 @@ export default function Hero() {
 
 
           <button 
+            id="hero-btn"
             className="
             mt-2 primary-button lg:text-3xl lg:primary-button-lg button-hover-sm py-4 bg-[#333] text-primary-300 shadow-sm ">מחירון <span className='pr-2'>&darr;</span></button>
 

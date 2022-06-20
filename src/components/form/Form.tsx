@@ -33,12 +33,12 @@ type FormState =
 
 // This is for programmatic rendering of form fields, easier to change fields from here
 const contactFormFields = [
-  [ 'fullName', 'שם מלא *', 'name-input'],
-  [ 'companyName', 'שם החברה *', 'company-input'],
-  [ 'email', 'כתובת דוא״ל *', 'email-input'],
-  [ 'budgetEst', 'תקציב משוער *', 'budget-select'],
-  [ 'deadlineEst', 'צפי משוער לסיום הפרויקט *', 'deadline-input'],
-  [ 'message', 'נשמח לשמוע על הפרויקט שתרצו לעבוד עליו, או כל דבר שתרצו לשתף איתנו.', 'message-input'],
+  [ 'fullName', 'שם מלא *', 'name-input', 'ניר דהן'],
+  [ 'companyName', 'שם החברה *', 'company-input', 'ניר דין בע״מ'],
+  [ 'email', 'כתובת דוא״ל *', 'email-input', "dahan.nir@gmail.com"],
+  [ 'budgetEst', 'תקציב משוער *', 'budget-select', ""],
+  [ 'deadlineEst', 'צפי משוער לסיום הפרויקט *', 'deadline-input', "5 ימים/שבועיים/חודש/חודשיים"],
+  [ 'message', 'נשמח לשמוע על הפרויקט שתרצו לעבוד עליו, או כל דבר שתרצו לשתף איתנו.', 'message-input', "אתר תדמית לעורך דין/עיצוב אתר בלבד/דף נחיתה ל..."],
 ]
 
 type Option = {
@@ -139,11 +139,11 @@ export default function Form() {
             className="form mb-4">
 
             {
-              contactFormFields.map(([id, placeholder, testid]) => {
+              contactFormFields.map(([id, label, testid, placeholder]) => {
 
                 return (
                   <div key={id}>
-                    <label className="mb-2 font-bold" htmlFor={id}>{placeholder}</label>
+                    <label className="mb-2 font-bold" htmlFor={id}>{label}</label>
                     {
                       id === 'budgetEst' && (
                         <select 
@@ -168,6 +168,7 @@ export default function Form() {
                             data-testid={testid}
                             onChange={changeInput}
                             aria-label="text-input"
+                            placeholder={ placeholder}
                             required
                             type={id === 'message' ? 'textarea' : 'text'}
                             name={id}
@@ -181,6 +182,7 @@ export default function Form() {
             }
             
             <button 
+              id="form-submit-btn"
               type="submit" 
               data-testid="submit-button-test"
               className="black-button 
