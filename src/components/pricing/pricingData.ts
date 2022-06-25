@@ -67,7 +67,7 @@ export const pricingData = [
     title: 'חנות אינטרנטית',
     features: [
       'עיצוב חנות ומותג',
-      'פיתוח ב wooCommerce או Shopify',
+      'פיתוח ב Shopify',
       'חיבור דומיין, אחסון וסליקה',
       'הדרכה ותמיכה מלאה על שימוש בפלטפורמה',
     ],

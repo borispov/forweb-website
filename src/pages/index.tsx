@@ -83,7 +83,8 @@ const Home: NextPage = () => {
       <ProcessSection />
       <PricingSection />
       
-      <div className="flex flex-col items-center pb-24">
+      {/* hidden for now */}
+      <div className="flex flex-col items-center pb-24 hidden">
         {/* <h1 className="thick-underline text-5xl">חברים מספרים</h1> */}
         <div className="flex flex-col lg:flex-row mt-12 gap-y-8 lg:gap-y-0 mb-24">
           <div className="review__card">
@@ -106,11 +107,10 @@ const Home: NextPage = () => {
       </div>
 
 
-      <h1 className="text-center w-80 mx-auto text-5xl thick-underline">PORTFOLIO</h1>
+      <h1 className="text-center w-80 mx-auto text-4xl lg:text-6xl thick-underline">PORTFOLIO</h1>
       <Portoflio />
       <Form />
       <FAQ />
-      {/* FOOTER HERE  */}
 
 
     </Layout>

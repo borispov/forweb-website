@@ -14,7 +14,7 @@ export default function Hero() {
       </h1>
       <h4 className="lg:text-2xl text-xl max-w-xl mx-auto pt-6">{HeroSectionData.subtitle_v2}</h4>
       <div className="pt-12">
-        <Link href="#contact-form">
+        <Link href="#pricing">
 
 
           <button 
