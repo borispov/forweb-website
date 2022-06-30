@@ -1,7 +1,5 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import Image from 'next/image';
-import Link from 'next/link';
 
 import FAQ from '@/components/FAQ';
 import Form from '@/components/form/Form';
@@ -10,20 +8,16 @@ import Layout from '@/components/layout/Layout';
 import Portoflio from '@/components/portfolio/Portfolio';
 import PricingSection from '@/components/pricing/PricingSection';
 import ProcessSection from '@/components/process/ProcessSection';
+import Seo from '@/components/Seo';
 import ServicesSection from '@/components/services/ServicesSection';
 // import Narrow from '../icons/Narrow';
 
 const Home: NextPage = () => {
   return (
     <Layout>
-      <Head>
-        <title>Forweb - Boutique Web Design & Development</title>
-        <meta name="description" content="Your place for all things web. Design, Development, and Marketing for Small Businesses" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Seo />
 
       <Hero />
-
 
       {/* Benefits Section */}
       <section className="mx-4 md:mx-12 text-center relative">
@@ -66,11 +60,15 @@ const Home: NextPage = () => {
 
           </div>
 
+
           <div className="max-w-md mx-auto pt-14 pb-16 relative">
+
+
+
             <p className="text-sm max-w-sm text-red-700 mb-4 mx-auto">
               בסופו של דבר, אתם מקבלים אתר/חנות/אפליקציה שעושה בדיוק את מה שהעסק והלקוחות שלכם צריכים.
             </p>
-            <Link href="#contact-form">
+            {/* <Link href="#contact-form">
               <button className="primary-button text-3xl shadow-sm hover:shadow-lg rounded-lg relative button-hover-sm-diagonal">
                 בואו לעבוד יחד
                 <div className="scrib__btn-left w-6 h-10 bg-[url('/scribs/button-addon-left.svg')] absolute">
@@ -78,11 +76,11 @@ const Home: NextPage = () => {
                 <div className="scrib__btn-right w-6 h-10 bg-[url('/scribs/button-addon-right.svg')] absolute">
                 </div>
               </button>
-            </Link>
+            </Link> */}
           </div>
 
 
-          <h2 className='text-center font-normal text-2xl pb-6'>מיטב הטכנולוגיות המתקדמות</h2>
+          <h2 className='text-center font-normal text-2xl pb-6'>עובדים עם מיטב הטכנולוגיות המתקדמות</h2>
 
           <div className="flex justify-center gap-10 pb-12">
             <Image src="/tech/figma-icon.svg"   width={64} height={64} />
@@ -101,7 +99,7 @@ const Home: NextPage = () => {
       <ProcessSection />
       <PricingSection />
       
-      <div className="flex flex-col items-center pb-24">
+      <div className="flex flex-col items-center pb-24 hidden">
         {/* <h1 className="thick-underline text-5xl">חברים מספרים</h1> */}
         <div className="flex flex-col lg:flex-row mt-12 gap-y-8 lg:gap-y-0 mb-24">
           <div className="review__card">
@@ -124,7 +122,7 @@ const Home: NextPage = () => {
       </div>
 
 
-      <h1 className="text-center w-80 mx-auto text-5xl thick-underline">PORTFOLIO</h1>
+      <h1 className="text-center w-80 mx-auto text-4xl lg:text-6xl thick-underline">PORTFOLIO</h1>
       <Portoflio />
       <Form />
       <FAQ />

@@ -1,5 +1,4 @@
 import { APIErrorCode, Client, ClientErrorCode, isNotionClientError } from '@notionhq/client';
-
 import { NextApiRequest, NextApiResponse } from 'next';
 
 const notion = new Client({
@@ -10,9 +9,6 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
   try {
     const formData = JSON.parse(req.body)
-
-    console.log('letseewhatisinside');
-    console.log(formData);
 
     const { 
       fullName,
@@ -47,7 +43,6 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       }
     })
 
-    console.log("operation succeeded")
     res.status(200).json({ message: "success" });
   } catch (error: unknown) {
     if (isNotionClientError(error)) {
@@ -64,6 +59,5 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     }
   }
 }
-
 
 export default handler;

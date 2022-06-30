@@ -4,15 +4,21 @@ import React from "react";
 import clsxm from "@/lib/clsxm";
 import { NavbarData } from "@/lib/siteData";
 
-function HamburgerMenu({ clickHandler }: { clickHandler: React.MouseEventHandler}) {
+function HamburgerMenu({ clickHandler, cx }: { clickHandler: React.MouseEventHandler, cx: string}) {
 
   return (
     <div>
       <div 
-        onClick={clickHandler}        className="space-y-2 block md:hidden cursor-pointer w-6 h-6 pt-2">
-        <span className="block w-10 h-[3px] bg-gray-500"></span>
+        onClick={clickHandler}        
+        className={cx}>
+          <svg viewBox="0 0 100 80" width="30" height="30">
+            <rect width="95" height="10" rx="8"></rect>
+            <rect y="30" width="85" height="10" rx="8"></rect>
+            <rect y="60" width="100" height="10" rx="8"></rect>
+          </svg>
+        {/* <span className="block w-10 h-[3px] bg-gray-500"></span>
         <span className="block w-8 h-[3px] bg-gray-500"></span>
-        <span className="block w-6 h-[3px] bg-gray-500"></span>
+        <span className="block w-6 h-[3px] bg-gray-500"></span> */}
       </div>
 
       {/* <div 
@@ -57,16 +63,9 @@ function NavbarItem({onClickHandler, children, href, cx}: {onClickHandler?: Reac
 export default function Header() {
 
   const [open, setOpen] = React.useState(false);
-  const [height, setHeight] = React.useState('0px');
-
-  const contentSpace = React.useRef<HTMLDivElement>(null);
 
   const clickHandler = () => {
     setOpen(!open);
-    if (contentSpace == undefined || contentSpace.current == undefined) {
-      return;
-    }
-    setHeight( !open ? '0px' : `${contentSpace.current.scrollHeight + 20 }px`);
   } 
 
 
@@ -82,6 +81,7 @@ export default function Header() {
                 className="mx-8 pt-5 align-bottom"
                 width={90} 
                 height={70} 
+                priority
                 src="/logo-vertical.png" alt="forweb logo" />
             </div>
           </nav>
@@ -92,30 +92,28 @@ export default function Header() {
   )
 
   return (
-    <header className='navbar sm:justify-between grid md:justify-center lg:h-32 lg:my-0'>
+    <header className='navbar sm:justify-between grid lg:justify-center lg:h-32 lg:my-0'>
         {/* This is Desktop view */}
-        <div className='hidden md:flex lg:max-w-5xl items-center'>
+        <div className='hidden lg:flex lg:max-w-5xl items-center'>
           { originalVariation() }
         </div>
 
       {/* This Is Mobile  */}
-      <nav className="flex flex-wrap itesm-center justify-between w-full py-4 md:py-0 px-4 text-lg text-gray-700 bg-transparent">
-        <HamburgerMenu clickHandler={clickHandler}/>
-        <div className="logo md:hidden">
+      <nav className="flex flex-wrap items-center justify-between w-full py-4 lg:py-0 px-4 text-lg text-gray-700 bg-transparent">
+        <HamburgerMenu clickHandler={clickHandler} cx="block lg:hidden cursor-pointer" />
+        <div className="lg:hidden">
           <Image 
             className="align-middle"
             width={120} 
             height={35} 
+            priority
             src="/logo.png" alt="forweb logo" />
           </div>
-
-
       </nav>
         <div 
-          ref={contentSpace}
           className={clsxm(
-            'md:hidden',
-            'duration-300 overflow-hidden transition-max-height max-h-0',
+            'lg:hidden',
+            'duration-300 overflow-hidden transition-max-height max-h-0 hover:transition-max-height hover:duration-200',
             'bg-gradient-to-b',
             'from-white',
             'via-primary-100/100',
