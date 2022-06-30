@@ -33,13 +33,13 @@ export const pricingData = [
     features: [
       'בקשות עיצוב ללא הגבלה',
       'תיקונים ללא הגבלה',
-      'עיצוב דפי נחיתה/אתרי תדמית',
+      'עיצוב אתר או דף נחיתה ב-Figma',
       'לוגו/ כרטיסי ביקור',
       'מודעות דיגיטל',
     ],
     price: {
       value: null,
-      reccuring: 899,
+      reccuring: 999,
       setup: null,
       fees: null,
     },
@@ -47,16 +47,16 @@ export const pricingData = [
     isManagement: false,
   },
   {
-    title: 'אתר תדמית',
+    title: 'Web + Design',
     features: [
-      'עיצוב אתר ב- Figma',
-      'פיתוח ב- Webflow או WordPress',
-      'חיבור לדומיין ואחסון',
-      'הדרכה ותמיכה לפני מסירה ללקוח',
+      'הכל מחבילת העיצוב',
+      'פיתוח ב- WordPress',
+      'פיתוח ב- Webflow',
+      'חיבור לדומיין ואחסון, הדרכה לפני מסירה',
     ],
     price: {
       value: null,
-      reccuring: 1399,
+      reccuring: 1899,
       setup: null,
       fees: null,
     },

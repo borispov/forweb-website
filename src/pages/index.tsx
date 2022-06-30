@@ -66,7 +66,7 @@ const Home: NextPage = () => {
 
           </div>
 
-          <div className="max-w-md mx-auto pt-14 pb-32 relative">
+          <div className="max-w-md mx-auto pt-14 pb-16 relative">
             <p className="text-sm max-w-sm text-red-700 mb-4 mx-auto">
               בסופו של דבר, אתם מקבלים אתר/חנות/אפליקציה שעושה בדיוק את מה שהעסק והלקוחות שלכם צריכים.
             </p>
@@ -81,7 +81,19 @@ const Home: NextPage = () => {
             </Link>
           </div>
 
+
+          <h2 className='text-center font-normal text-2xl pb-6'>מיטב הטכנולוגיות המתקדמות</h2>
+
+          <div className="flex justify-center gap-10 pb-12">
+            <Image src="/tech/figma-icon.svg"   width={64} height={64} />
+            <Image src="/tech/react-icon.svg"   width={64} height={64} />
+            <Image src="/tech/next-icon.svg"    width={64} height={64} />
+            <Image src="/tech/wordpress-icon.svg"      width={64} height={64} />
+            <Image src="/tech/webflow-icon.svg" width={64} height={64} />
+          </div>
+
         </div>
+
 
       </section>
 
