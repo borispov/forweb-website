@@ -80,7 +80,7 @@ export const pricingData = [
       'הדרכה ותמיכה מלאה על שימוש בפלטפורמה',
     ],
     price: {
-      value: 5999,
+      value: 6999,
       reccuring: null,
       setup: null,
       fees: null,
