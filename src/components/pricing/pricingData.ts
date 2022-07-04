@@ -39,7 +39,7 @@ export const pricingData = [
     ],
     price: {
       value: null,
-      reccuring: 899,
+      reccuring: 1599,
       setup: null,
       fees: null,
     },
@@ -56,7 +56,7 @@ export const pricingData = [
     ],
     price: {
       value: null,
-      reccuring: 1399,
+      reccuring: 2099,
       setup: null,
       fees: null,
     },
