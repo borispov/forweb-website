@@ -39,11 +39,7 @@ export const pricingData = [
     ],
     price: {
       value: null,
-<<<<<<< HEAD
-      reccuring: 1599,
-=======
-      reccuring: 999,
->>>>>>> refs/remotes/origin/main
+      reccuring: 1699,
       setup: null,
       fees: null,
     },
@@ -60,11 +56,7 @@ export const pricingData = [
     ],
     price: {
       value: null,
-<<<<<<< HEAD
-      reccuring: 2099,
-=======
-      reccuring: 1899,
->>>>>>> refs/remotes/origin/main
+      reccuring: 2299,
       setup: null,
       fees: null,
     },
@@ -75,7 +67,7 @@ export const pricingData = [
     title: 'חנות אינטרנטית',
     features: [
       'עיצוב חנות ומותג',
-      'פיתוח ב Shopify',
+      'פיתוח ב Shopify/WooCommerce',
       'חיבור דומיין, אחסון וסליקה',
       'הדרכה ותמיכה מלאה על שימוש בפלטפורמה',
     ],
