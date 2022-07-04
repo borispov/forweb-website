@@ -60,7 +60,11 @@ const Home: NextPage = () => {
 
           </div>
 
-          <div className="max-w-md mx-auto pt-14 pb-10 relative">
+
+          <div className="max-w-md mx-auto pt-14 pb-16 relative">
+
+
+
             <p className="text-sm max-w-sm text-red-700 mb-4 mx-auto">
               בסופו של דבר, אתם מקבלים אתר/חנות/אפליקציה שעושה בדיוק את מה שהעסק והלקוחות שלכם צריכים.
             </p>
@@ -75,7 +79,19 @@ const Home: NextPage = () => {
             </Link> */}
           </div>
 
+
+          <h2 className='text-center font-normal text-2xl pb-6'>עובדים עם מיטב הטכנולוגיות המתקדמות</h2>
+
+          <div className="flex justify-center gap-10 pb-12">
+            <Image src="/tech/figma-icon.svg"   width={64} height={64} />
+            <Image src="/tech/react-icon.svg"   width={64} height={64} />
+            <Image src="/tech/next-icon.svg"    width={64} height={64} />
+            <Image src="/tech/wordpress-icon.svg"      width={64} height={64} />
+            <Image src="/tech/webflow-icon.svg" width={64} height={64} />
+          </div>
+
         </div>
+
 
       </section>
 
@@ -83,7 +99,6 @@ const Home: NextPage = () => {
       <ProcessSection />
       <PricingSection />
       
-      {/* hidden for now */}
       <div className="flex flex-col items-center pb-24 hidden">
         {/* <h1 className="thick-underline text-5xl">חברים מספרים</h1> */}
         <div className="flex flex-col lg:flex-row mt-12 gap-y-8 lg:gap-y-0 mb-24">
@@ -111,6 +126,7 @@ const Home: NextPage = () => {
       <Portoflio />
       <Form />
       <FAQ />
+      {/* FOOTER HERE  */}
 
 
     </Layout>
