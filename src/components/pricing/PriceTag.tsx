@@ -17,7 +17,7 @@ export default function PriceTag({ prefix = '', recurring = false, value, starti
   return (
     <PriceTagElement>
       {
-        `${prefix} ${startingAt && `החל מ ` || ''}${value}₪ ${recurring && `/חודש` || ''}`
+        `${prefix} ${startingAt && `החל מ- ` || ''}${value}₪ ${recurring && `/חודש` || ''}`
       }
     </PriceTagElement>
   )

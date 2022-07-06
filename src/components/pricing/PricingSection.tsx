@@ -5,7 +5,7 @@ import clsxm from "@/lib/clsxm";
 
 import PriceTag from "@/components/pricing/PriceTag";
 
-import { IPricingItemProps, pricingData } from './pricingData';
+import { IPricingItemProps, pricingData_v3 as pricingData } from './pricingData';
 
 const CALENDLY_URL = 'https://calendly.com/borispov/consult';
 
@@ -20,7 +20,10 @@ function PricingItem({ pkg }: IPricingItemProps ) {
       className={clsxm(
         'grid-item flex flex-col justify-between',
         'p-8 font-bold',
-        'bg-white rounded-sm',
+        'bg-white rounded-sm border-[0px] border-gray-600',
+        [
+          pkg.isPopular && 'bg-gradient-to-br from-primary-50  to-primary-300 shadow-2xl'
+        ]
       )}
     >
       <h3 className="text-black text-2xl">
@@ -64,7 +67,7 @@ function PricingItem({ pkg }: IPricingItemProps ) {
         'start-here', 
         'black-button mx-auto w-10/12 py-6 rounded-lg mt-6', 
         'bg-black text-white shadow-sm shadow-gray-300',
-        'button-hover-lg'
+        'button-hover-lg',
         )}
         >התחל כאן</a>
       <a href={CALENDLY_URL} className={clsxm(
@@ -100,7 +103,7 @@ export default function PricingSection() {
     </AnimationOnScroll>
 
       <h1 className="text-center text-5xl">חבילות</h1>
-      <div className="grid gap-1 max-w-5xl mx-auto pt-6 lg:grid-cols-3 grid-cols-[1fr]">
+      <div className="grid gap-1 max-w-5xl mx-auto pt-6 lg:grid-cols-2 grid-cols-[1fr] items-center justify-center">
         {
           pricingData.map((pkg, id) => (
             <PricingItem pkg={pkg} key={id} />
@@ -109,10 +112,13 @@ export default function PricingSection() {
       </div>
 
       <div className="flex justify-center flex-col items-center pt-12">
+        <p className="text-sm text-gray-500">* בקשות ללא הגבלה: ניתן לעבוד על בקשה אחת בו-זמנית, כל בקשה תתבצע עד 4 ימים</p>
         <h2 className="text-center">לא מוצאים חבילה מתאימה? אין בעיה, נתאים לכם!</h2>
         <Link href="#contact-form">
           <button className="mt-6 primary-button button-hover-sm py-4 bg-primary-300 shadow-sm ">התאת חבילה</button>
         </Link>
+
+        <div className="w-4/5 border-b-[1px] pt-16 mx-auto"></div>
       </div>
 
     </section>

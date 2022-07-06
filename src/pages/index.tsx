@@ -80,14 +80,14 @@ const Home: NextPage = () => {
           </div>
 
 
-          <h2 className='text-center font-normal text-2xl pb-6'>עובדים עם מיטב הטכנולוגיות המתקדמות</h2>
+          <h2 className='text-center font-normal text-2xl pb-8'>עובדים עם מיטב הטכנולוגיות המתקדמות</h2>
 
-          <div className="flex justify-center gap-10 pb-12">
-            <Image src="/tech/figma-icon.svg"   width={64} height={64} />
-            <Image src="/tech/react-icon.svg"   width={64} height={64} />
-            <Image src="/tech/next-icon.svg"    width={64} height={64} />
-            <Image src="/tech/wordpress-icon.svg"      width={64} height={64} />
-            <Image src="/tech/webflow-icon.svg" width={64} height={64} />
+          <div className="flex justify-center gap-20 pb-12">
+            <Image src="/tech/figma-icon.svg"   width={42} height={42} />
+            <Image src="/tech/react-icon.svg"   width={42} height={42} />
+            <Image src="/tech/next-icon.svg"    width={42} height={42} />
+            <Image src="/tech/wordpress-icon.svg"      width={42} height={42} />
+            <Image src="/tech/webflow-icon.svg" width={42} height={42} />
           </div>
 
         </div>
