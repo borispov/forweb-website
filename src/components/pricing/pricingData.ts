@@ -199,25 +199,25 @@ export const pricingData = [
 
 
 export const pricingData_v3 = [
-  {
-    title: 'עיצוב',
-    subtitle: 'שירותי עיצוב...',
-    features: [
-      'בקשות עיצוב ללא הגבלה',
-      'תיקונים ללא הגבלה',
-      'עיצוב אתר או דף נחיתה ב-Figma',
-      'לוגו/כרטיסי ביקור/מודעות לדיגיטל/רולאפים',
-      'בקשה אחת בו זמנית, עד 4 ימים לסיום כל בקשה',
-    ],
-    price: {
-      value: null,
-      reccuring: 1850,
-      setup: null,
-      fees: null,
-    },
-    startingAt: false,
-    isManagement: false,
-  },
+  // {
+  //   title: 'עיצוב',
+  //   subtitle: 'שירותי עיצוב...',
+  //   features: [
+  //     'בקשות עיצוב ללא הגבלה',
+  //     'תיקונים ללא הגבלה',
+  //     'עיצוב אתר או דף נחיתה ב-Figma',
+  //     'לוגו/כרטיסי ביקור/מודעות לדיגיטל/רולאפים',
+  //     'בקשה אחת בו זמנית, עד 4 ימים לסיום כל בקשה',
+  //   ],
+  //   price: {
+  //     value: null,
+  //     reccuring: 1850,
+  //     setup: null,
+  //     fees: null,
+  //   },
+  //   startingAt: false,
+  //   isManagement: false,
+  // },
   {
     title: 'אתר תדמית',
     features: [

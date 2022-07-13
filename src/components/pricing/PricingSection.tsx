@@ -18,7 +18,7 @@ function PricingItem({ pkg }: IPricingItemProps ) {
     <div 
       id="pricing"
       className={clsxm(
-        'grid-item flex flex-col justify-between',
+        'grid-item flex flex-col justify-between basis-1/2',
         'p-8 font-bold',
         'bg-white rounded-sm border-[0px] border-gray-600',
         [
@@ -103,7 +103,16 @@ export default function PricingSection() {
     </AnimationOnScroll>
 
       <h1 className="text-center text-5xl">חבילות</h1>
-      <div className="grid gap-1 max-w-5xl mx-auto pt-6 lg:grid-cols-2 grid-cols-[1fr] items-center justify-center">
+      {/* <div 
+        className="
+          grid gap-1 
+          lg:grid-cols-2 grid-cols-[1fr]
+          max-w-5xl mx-auto pt-6 items-center justify-center"> */}
+          <div className="
+            flex md:flex-row flex-col
+            justify-items-center justify-center gap-2
+            max-w-5xl mx-auto pt-6
+          ">
         {
           pricingData.map((pkg, id) => (
             <PricingItem pkg={pkg} key={id} />
