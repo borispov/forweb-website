@@ -12,7 +12,7 @@ export default function Hero() {
       <h1 className="lg:text-7xl text-2xl md:text-4xl font-serif">
         <span className='thick-underline'>{HeroSectionData.title}</span>
       </h1>
-      <h4 className="lg:text-2xl text-xl max-w-xl mx-auto pt-6">{HeroSectionData.subtitle_v2}</h4>
+      <h4 className="lg:text-2xl text-xl max-w-xl mx-auto pt-6">{HeroSectionData.subtitle_v4}</h4>
       <div className="pt-12">
         <Link href="#pricing">
 
@@ -22,13 +22,6 @@ export default function Hero() {
             className="
             mt-2 primary-button lg:text-3xl lg:primary-button-lg button-hover-sm py-4 bg-[#333] text-primary-300 shadow-sm ">מחירון <span className='pr-2'>&darr;</span></button>
 
-          {/* <button className="
-          px-12 lg:px-20 lg:py-6 py-[10px] bg-black flex justify-between gap-5 flex-row-reverse items-center mx-auto 
-          text-white text-2xl lg:text-4xl font-work font-bold rounded-full shadow-md border-black border-[1px]
-          duration-500 hover:shadow-lg hover:bg-white hover:text-black hover:border-black transition-all">
-            {HeroSectionData.cta_text}
-            <UpRightArrowIcon className=""/>
-          </button> */}
         </Link>
     </div>
 

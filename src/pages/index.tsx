@@ -29,7 +29,7 @@ const Home: NextPage = () => {
           <h4 className="texl-3xl text-secondary">למה אנחנו</h4>
           <h2 className="text-6xl">ובמה אנחנו שונים מכל השאר?</h2>
 
-          <div className="md:grid md:grid-cols-3 pt-16 sm:flex sm:flex-col max-w-5xl mx-auto">
+          <div className="md:grid md:grid-cols-3 pt-16 sm:flex sm:flex-col max-w-5xl mx-auto mb-12">
 
             <div className="bg-unique1 unique1-shadow rounded-lg flex flex-col max-w-sm text-gray-100 p-4 md:p-10 md:mx-4 md:my-0 my-4 mx-auto">
             <h3 className="text-white">אנחנו מבינים עניין</h3>
@@ -60,34 +60,14 @@ const Home: NextPage = () => {
 
           </div>
 
+          <h2 className='text-center font-bold text-3xl pb-8'>עובדים עם מיטב הטכנולוגיות המתקדמות</h2>
 
-          <div className="max-w-md mx-auto pt-14 pb-16 relative">
-
-
-
-            <p className="text-sm max-w-sm text-red-700 mb-4 mx-auto">
-              בסופו של דבר, אתם מקבלים אתר/חנות/אפליקציה שעושה בדיוק את מה שהעסק והלקוחות שלכם צריכים.
-            </p>
-            {/* <Link href="#contact-form">
-              <button className="primary-button text-3xl shadow-sm hover:shadow-lg rounded-lg relative button-hover-sm-diagonal">
-                בואו לעבוד יחד
-                <div className="scrib__btn-left w-6 h-10 bg-[url('/scribs/button-addon-left.svg')] absolute">
-                </div>
-                <div className="scrib__btn-right w-6 h-10 bg-[url('/scribs/button-addon-right.svg')] absolute">
-                </div>
-              </button>
-            </Link> */}
-          </div>
-
-
-          <h2 className='text-center font-normal text-2xl pb-8'>עובדים עם מיטב הטכנולוגיות המתקדמות</h2>
-
-          <div className="flex justify-center gap-20 pb-12">
-            <Image src="/tech/figma-icon.svg"   width={42} height={42} />
-            <Image src="/tech/react-icon.svg"   width={42} height={42} />
-            <Image src="/tech/next-icon.svg"    width={42} height={42} />
-            <Image src="/tech/wordpress-icon.svg"      width={42} height={42} />
-            <Image src="/tech/webflow-icon.svg" width={42} height={42} />
+          <div className="flex justify-center gap-28 pb-12">
+            <Image src="/tech/figma-icon.svg"   width={42} height={42} alt="Figma Icon" />
+            <Image src="/tech/react-icon.svg"   width={42} height={42} alt="React Icon" />
+            <Image src="/tech/next-icon.svg"    width={42} height={42} alt="Nextjs Icon" />
+            <Image src="/tech/wordpress-icon.svg" width={42} height={42} alt='WordPress Icon' />
+            <Image src="/tech/webflow-icon.svg" width={42} height={42} alt="Webflow Icon" />
           </div>
 
         </div>
@@ -98,36 +78,11 @@ const Home: NextPage = () => {
       <ServicesSection />
       <ProcessSection />
       <PricingSection />
-      
-      <div className="flex flex-col items-center pb-24 hidden">
-        {/* <h1 className="thick-underline text-5xl">חברים מספרים</h1> */}
-        <div className="flex flex-col lg:flex-row mt-12 gap-y-8 lg:gap-y-0 mb-24">
-          <div className="review__card">
-            <Image src="/quotes.png" alt="quotes icon" width={54} height={48} objectFit="contain"/>
-            <p className="max-w-sm mt-4 text-base">
-            הצטערנו שלא פנינו עוד קודם. השירות, המקצועיות, המענה המהיר ומתן הסבר לכל שאלה וייעוץ - הם מעבר לכל. והכי חשוב - מחיר ותוצאות בשטח.
-            </p>
-            <h2 className="mt-2">איגור ויבגני, Raw Planet</h2>
-          </div>
-
-          {/* <div className="review__card">
-            <Image objectFit="contain" src="/quotes.png" alt="quotes icon" width={32} height={32}/>
-            <p className="max-w-sm">
-            פנינו ל Forweb לצורך שיווק ממומן בגוגל ופייסבוק לעסק חדש שלנו. לא רק שקיבלנו מענה מקצועי והסברים שסייעו לנו להבין רבות אודות שיווק ובכלל, אלא מתן מענה והסברים בעלי ערך בנוגע לנושאים כגון תחזוקת האתר, SEO ומה לא...
-            </p>
-            <h2>אלמוג ויוסי, Pixel Design</h2>
-          </div> */}
-
-        </div>
-      </div>
-
 
       <h1 className="text-center w-80 mx-auto text-4xl lg:text-6xl thick-underline">PORTFOLIO</h1>
       <Portoflio />
       <Form />
       <FAQ />
-      {/* FOOTER HERE  */}
-
 
     </Layout>
   )

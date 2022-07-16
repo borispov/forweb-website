@@ -1,4 +1,8 @@
+import gsap from "gsap";
 import Image from "next/image";
+import React from 'react'; 
+
+import clsxm from "@/lib/clsxm";
 
 interface Project {
   projectName: string;
@@ -40,16 +44,30 @@ const portfolioData: Project[] = [
 ]
 
 export default function Portoflio() {
+
+  const el = React.useRef();
+
+  // TODO: Let's see how GSAP handles my portfolio
+  React.useEffect(() => {
+    const q = gsap.utils.selector(el);
+    gsap.to(q('.even'), { y: 50})
+    gsap.to(q('.odd'), { y: -25})
+  },[])
+
   return (
     <div id="work" className="space-x mt-8 mb-24">
       <div className="grid md:grid-cols-2 grid-cols-1 gap-5 md:gap-8">
          {
-          portfolioData.map(project => (
+          portfolioData.map((project, i) => (
               <div 
                 key={project.projectName}
-                className="
-                  hover:shadow-primary-200
-                  project-item rounded-lg shadow-2xl w-auto lg:max-w-md max-w-screen-sm mx-4"
+                className={clsxm(
+                  [
+                    i % 2 === 0 && 'even' || 'odd'
+                  ],
+                  'hover:shadow-primary-200',
+                  'project-item rounded-lg shadow-2xl w-auto lg:max-w-md max-w-screen-sm mx-4',
+                )}
                 >
                   <Image 
                     className="rounded-lg"
