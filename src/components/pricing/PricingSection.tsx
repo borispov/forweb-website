@@ -121,7 +121,7 @@ export default function PricingSection() {
       </div>
 
       <div className="flex justify-center flex-col items-center pt-12">
-        <p className="text-sm text-gray-500">* בקשות ללא הגבלה: ניתן לעבוד על בקשה אחת בו-זמנית, כל בקשה תתבצע עד 4 ימים</p>
+
         <h2 className="text-center">לא מוצאים חבילה מתאימה? אין בעיה, נתאים לכם!</h2>
         <Link href="#contact-form">
           <button className="mt-6 primary-button button-hover-sm py-4 bg-primary-300 shadow-sm ">התאת חבילה</button>

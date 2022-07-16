@@ -10,21 +10,23 @@ import WormScrib from "@/icons/WormScrib";
 
 const state = [
   {
-    title: 'אפיון',
+    title: 'אפיון והכנה',
     subtitle: 'מיפוי צרכי העסק',
-    description: 'פגישת ייעוץ ואיסוף מידע ותכנון תכנית העבודה',
+    // description: 'פגישת ייעוץ ואיסוף מידע ותכנון תכנית העבודה',
+    description: 'אנו נשאל אתכם שאלות על העסק ונבקשכם להעביר לנו קבצי מדיה ותוכן להכנת האתר',
     stepNumber: 1,
   },
   {
     title: 'עיצוב ופיתוח',
     subtitle: 'עיצוב ב- Figma, פיתוח ב- Webflow',
-    description: 'עיצוב ופיתוח בהתאם לשלב הראשון. פיתוח מקצועי איכותי וזריז',
+    // description: 'עיצוב ופיתוח בהתאם לשלב הראשון. פיתוח מקצועי איכותי וזריז',
+    description: 'אחרי שאספנו את כל המידע הנחוץ, עוברים לעיצוב האתר ומיד לאחר מכן פיתוח והטמעת העיצוב',
     stepNumber: 2,
   },
   {
     title: 'ליטוש אחרון',
     subtitle: 'טאץ׳ אחרון ו...',
-    description: 'נגיעות אחרונות, חיבור לאחסון ודומיין',
+    description: 'חיבור לאחסון, חיבור לדומיין והדרכה על איך אתם מתנהלים מעכשיו...',
     stepNumber: 3,
   },
 ]
@@ -67,9 +69,9 @@ function ProcessItem({ item, num }: ProcessItemProps) {
         <h1 className="text-8xl pr-2">{num + 1}</h1>
       </div>
       <div className="pt-10 pr-10 pb-8">
-        <h2 className="text-black">{item.title}</h2>
-        <h3 className="text-gray-500 text-base font-normal">{item.subtitle}</h3>
-        <p className="max-w-md">{item.description }</p>
+        <h2 className="text-black mb-2 text-3xl">{item.title}</h2>
+        {/* <h3 className="text-gray-500 text-base font-normal">{item.subtitle}</h3> */}
+        <p className="max-w-md text-lg">{item.description }</p>
       </div>
     </div>
   )
@@ -81,7 +83,7 @@ export default function ProcessSection() {
       <BigSunIcon className="absolute right-0 top-1/3 w-40 lg:w-auto" />
       <div className="container text-center pt-24">
         <h1 className="text-4xl text-[#333] mb-4">
-          לתת לעסק שלך לצמוח עם
+          מאפס לאתר מוכן ב
           <br/>
           3 שלבים פשוטים
         </h1>

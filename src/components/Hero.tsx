@@ -9,14 +9,12 @@ import PinkFloydTriangleIcon from '@/icons/PinkFloydTriangleIcon';
 export default function Hero() {
   return (
     <div className="pt-20 lg:pt-48 md:pt-32 text-center noise-bg pb-12 relative">
-      <h1 className="lg:text-7xl text-2xl md:text-4xl font-serif">
+      <h1 className="lg:text-7xl text-3xl md:text-4xl font-serif">
         <span className='thick-underline'>{HeroSectionData.title}</span>
       </h1>
-      <h4 className="lg:text-2xl text-xl max-w-xl mx-auto pt-6">{HeroSectionData.subtitle_v4}</h4>
+      <h4 className="lg:text-2xl text-xl max-w-xs mx-auto pt-6">{HeroSectionData.subtitle_v4}</h4>
       <div className="pt-12">
         <Link href="#pricing">
-
-
           <button 
             id="hero-btn"
             className="
