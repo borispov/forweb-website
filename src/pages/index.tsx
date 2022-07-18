@@ -1,7 +1,6 @@
+import { gsap } from 'gsap'
 import type { NextPage } from 'next';
 import Image from 'next/image';
-
-import { gsap } from 'gsap';
 import React from 'react';
 
 import FAQ from '@/components/FAQ';
@@ -20,11 +19,8 @@ const Home: NextPage = () => {
   React.useEffect(() => {
     gsap.from('#benefit-1', { x: 1250 });
     gsap.to('#benefit-1', { x: 0 });
-
-    gsap.from('#benefit-3', { x: -1250 });
-    gsap.to('#benefit-3', { x: 0 });
-
-
+    // gsap.from('#benefit-3', { x: -1250 });
+    // gsap.to('#benefit-3', { x: 0 });
   }, [])
 
   return (
@@ -43,10 +39,10 @@ const Home: NextPage = () => {
           <h4 className="texl-3xl text-secondary">למה אנחנו</h4>
           <h2 className="text-6xl">ובמה אנחנו שונים מכל השאר?</h2>
 
-          <div className="md:grid md:grid-cols-3 pt-16 sm:flex sm:flex-col max-w-5xl mx-auto mb-12">
+          <div id="benefits" className="md:grid md:grid-cols-3 pt-16 sm:flex sm:flex-col max-w-5xl mx-auto mb-12 overflow-x-hidden px-3">
 
             <div id="benefit-1" className="bg-unique3 unique3-shadow 
-              rounded-lg flex flex-col max-w-sm text-gray-100 p-4 
+              rounded-lg flex flex-col max-w-sm text-gray-100 p-4
               md:p-10 md:mx-4 md:my-0 my-4 mx-auto">
 
             {/* OLD  */}

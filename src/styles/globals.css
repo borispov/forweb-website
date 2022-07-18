@@ -309,3 +309,11 @@ select {
 .project-item:nth-child(odd) {
   @apply sm:mx-auto lg:ml-0 lg:mr-auto;
 }
+
+.center-with-abs-left {
+  margin: 0;
+  padding: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -20%;
+}
