@@ -227,7 +227,7 @@ export const pricingData_v3 = [
       'אפשרות לפיתוח מותאם עם HTML/CSS/JavaScript',
     ],
     price: {
-      value: 3350,
+      value: 3450,
       reccuring: null,
       setup: null,
       fees: null,
