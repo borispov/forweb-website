@@ -227,7 +227,7 @@ export const pricingData_v3 = [
       'שימוש בטכנולוגיות הנכונות ביותר לפרויקט שלכם',
     ],
     price: {
-      value: 10000,
+      value: 8000,
       reccuring: null,
       setup: null,
       fees: null,
