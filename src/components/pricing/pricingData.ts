@@ -221,30 +221,13 @@ export const pricingData_v3 = [
   {
     title: 'אתר תדמית',
     features: [
-      'עיצוב ופיתוח מותאמים לעסק',
+      'עיצוב ייחודי ופיתוח מותאם לחזון העסקי ולקהל היעד',
       'חיבור האתר לאחסון וכתובת דומיין',
       'פיתוח ב- WordPress או Webflow',
-      'אפשרות לפיתוח מותאם עם HTML/CSS/JavaScript',
+      'שימוש בטכנולוגיות הנכונות ביותר לפרויקט שלכם',
     ],
     price: {
-      value: 3450,
-      reccuring: null,
-      setup: null,
-      fees: null,
-    },
-    startingAt: true,
-    isManagement: false,
-  },
-  {
-    title: 'חנות אינטרנטית',
-    features: [
-      'עיצוב חנות ומותג',
-      'פיתוח ב Shopify/WooCommerce',
-      'חיבור דומיין, אחסון וסליקה',
-      'הדרכה ותמיכה מלאה על שימוש בפלטפורמה',
-    ],
-    price: {
-      value: 8550,
+      value: 10000,
       reccuring: null,
       setup: null,
       fees: null,
@@ -263,7 +246,7 @@ export const pricingData_v3 = [
       'נא ליצור קשר!',
     ],
     price: {
-      value: 8550,
+      value: 15000,
       reccuring: null,
       setup: null,
       fees: null,
