@@ -17,6 +17,11 @@ const portfolioData: Project[] = [
     imagePath: "/images/raw.png",
   },
   {
+    projectName: "Alegra & Lion Cafe",
+    typeOfWork: "Web Design",
+    imagePath: "/images/alegra.jpg"
+  },
+  {
     projectName: "uFit",
     typeOfWork: "Web Design, Web Development",
     imagePath: "/images/gym.png"
@@ -32,14 +37,9 @@ const portfolioData: Project[] = [
     imagePath: "/images/oren.png"
   },
   {
-    projectName: "OverGrown",
-    typeOfWork: "Web Design, Real Estate Niche",
-    imagePath: "/images/over.png"
-  },
-  {
-    projectName: "Beauty Salon App",
-    typeOfWork: "Web & Mobile Design Concepts",
-    imagePath: "/images/salon_app.png"
+    projectName: "Forcard",
+    typeOfWork: "Startup, Web Design & Development",
+    imagePath: "/images/forcard.jpg"
   },
 ]
 

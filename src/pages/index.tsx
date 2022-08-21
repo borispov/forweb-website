@@ -36,10 +36,10 @@ const Home: NextPage = () => {
           className="animate__animated animate__fadeInLeft animate__once absolute left-1/4 -bottom-24 w-52 lg:left-24 lg:-bottom-24 lg:w-96 lg:h-80 sm:w-32 sm:h-20 z-10" /> */}
 
         <div className="pt-42 max-w-5xl mx-auto pt-24">
-          <h4 className="texl-3xl text-secondary">למה אנחנו</h4>
+          <h4 className="texl-3xl text-secondary pt-8">למה אנחנו</h4>
           <h2 className="text-6xl">ובמה אנחנו שונים מכל השאר?</h2>
 
-          <div id="benefits" className="md:grid md:grid-cols-3 pt-16 sm:flex sm:flex-col max-w-5xl mx-auto mb-12 overflow-x-hidden px-3">
+          <div id="benefits" className="md:grid md:grid-cols-3 pt-16 sm:flex sm:flex-col max-w-5xl mx-auto mb-12 overflow-x-hidden px-3 pb-8">
 
             <div id="benefit-1" className="bg-unique3 unique3-shadow 
               rounded-lg flex flex-col max-w-sm text-gray-100 p-4
