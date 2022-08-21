@@ -50,9 +50,11 @@ export default function Portoflio() {
   // TODO: Let's see how GSAP handles my portfolio
   React.useEffect(() => {
     const q = gsap.utils.selector(el);
-    gsap.to(q('.even'), { y: 50})
-    gsap.to(q('.odd'), { y: -25})
-  },[])
+    setTimeout(() => {
+      gsap.to(q('.even'), { y: 50})
+      gsap.to(q('.odd'), { y: -25})
+    }, 1000)
+  }, [])
 
   return (
     <div id="work" className="space-x mt-8 mb-24">
@@ -62,11 +64,11 @@ export default function Portoflio() {
               <div 
                 key={project.projectName}
                 className={clsxm(
+                  'project-item rounded-lg shadow-2xl w-auto lg:max-w-md max-w-screen-sm mx-4 transition-all',
+                  'hover:shadow-primary-200',
                   [
                     i % 2 === 0 && 'even' || 'odd'
                   ],
-                  'hover:shadow-primary-200',
-                  'project-item rounded-lg shadow-2xl w-auto lg:max-w-md max-w-screen-sm mx-4',
                 )}
                 >
                   <Image 
@@ -75,8 +77,6 @@ export default function Portoflio() {
                     alt={project.projectName} 
                     priority
                     width={487} 
-                    // width={320} 
-                    // height={185} 
                     height={300} 
                     layout='intrinsic'
                   />
