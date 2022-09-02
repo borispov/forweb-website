@@ -9,7 +9,7 @@ export interface IPrice {
   reccuring: number | null,
   setup: number | null,
   fees: string | null,
-  value?: number | null;
+  value?: number | string | null;
 }
 
 export interface IPackageItem {
