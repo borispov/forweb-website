@@ -1,7 +1,7 @@
 export interface IPriceType {
   prefix?: string;
   recurring?: boolean;
-  value: number | null;
+  value: number | string | null;
   startingAt: boolean;
   isManagement?: boolean;
 }
