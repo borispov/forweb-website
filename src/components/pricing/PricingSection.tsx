@@ -7,7 +7,7 @@ import PriceTag from "@/components/pricing/PriceTag";
 
 import { IPricingItemProps, pricingData_v3 as pricingData } from './pricingData';
 
-const CALENDLY_URL = 'https://calendly.com/borispov/consult';
+// const CALENDLY_URL = 'https://calendly.com/borispov/consult';
 
 
 function PricingItem({ pkg }: IPricingItemProps ) {
@@ -70,12 +70,12 @@ function PricingItem({ pkg }: IPricingItemProps ) {
         'button-hover-lg',
         )}
         >התחל כאן</a>
-      <a href={CALENDLY_URL} className={clsxm(
+      {/* <a href={CALENDLY_URL} className={clsxm(
         'book-here', 
         'font-work mx-auto underline font-light pt-4 tracking-wider',
         'text-black'
         )}
-      >Book A Call</a>
+      >Book A Call</a> */}
     </div>
   )
 }

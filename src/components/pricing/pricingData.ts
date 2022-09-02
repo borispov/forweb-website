@@ -223,11 +223,12 @@ export const pricingData_v3 = [
     features: [
       'עיצוב ייחודי ופיתוח מותאם לחזון העסקי ולקהל היעד',
       'חיבור האתר לאחסון וכתובת דומיין',
-      'פיתוח ב- WordPress או Webflow',
+      'פיתוח ב- WordPress או בקוד מאפס',
       'שימוש בטכנולוגיות הנכונות ביותר לפרויקט שלכם',
+      'אפשרות לכתיבת התוכן לאתר'
     ],
     price: {
-      value: 8000,
+      value: "3,000",
       reccuring: null,
       setup: null,
       fees: null,
@@ -246,7 +247,7 @@ export const pricingData_v3 = [
       'נא ליצור קשר!',
     ],
     price: {
-      value: 15000,
+      value: "15,000",
       reccuring: null,
       setup: null,
       fees: null,

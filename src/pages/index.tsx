@@ -45,17 +45,8 @@ const Home: NextPage = () => {
               rounded-lg flex flex-col max-w-sm text-gray-100 p-4
               md:p-10 md:mx-4 md:my-0 my-4 mx-auto">
 
-            {/* OLD  */}
-            {/* <h3 className="text-gray-600 text-xl">אנחנו מבינים עניין</h3> */}
-            {/* NEW  */}
             <h3 className="text-xl">מומחים בתחומינו</h3>
 
-            {/* OLD  */}
-            {/* <p className="max-w-sm pt-3 text-gray-700">
-            יש לנו ניסיון בטכנולוגיות המתקדמות בתחום ואנחנו מקפידים להשתמש בטכנולוגיות המתאימות לצרכים שלכם, ולא רק לפי מה שטרנדי.
-            </p> */}
-
-            {/* NEW */}
               <p className="max-w-sm pt-1 text-lg">
               משתמשים בטכנולוגיות ובכלים הנכונים לעסק שלך
               </p>
@@ -64,31 +55,15 @@ const Home: NextPage = () => {
 
             <div className="bg-unique2 unique2-shadow rounded-lg flex flex-col max-w-sm text-gray-100 p-4 md:p-10 md:mx-4 md:my-0 mx-auto my-4">
               <h3 className='text-xl'>שירות בגובה העיניים</h3>
-            {/* OLD */}
-              {/* <p className="max-w-sm pt-3">
-              אתם עסק קטן. אנחנו עסק קטן. 
-    אנחנו לא טובים מכם, אולי נלמד מכם ויתרה מכך, אנו נשמח לייעץ, לסייע ולהעשיר בידע כל לקוח שמביע עניין וסקרנות.
-    אנחנו מלווים אתכם בכל שלב בתהליך.
-              </p> */}
-            {/* NEW */}
               <p className="max-w-sm pt-1 text-lg">
                 ההצלחה שלכם היא ההצלחה שלנו, אנחנו נעשה הכל כדי שתהיו מרוצים
               </p>
             </div>
 
             <div id="benefit-3" className="bg-unique3 unique3-shadow rounded-lg flex flex-col max-w-sm text-gray-100 p-4 md:p-10 md:mx-4 md:my-0 mx-auto my-4">
-              <h3 className='text-xl'>שברנו את השוק</h3>
-              {/* OLD */}
-              {/* <p className="max-w-sm pt-3">
-              תכל׳ס? אנחנו רוצים שתרוויחו!
-    מחיר שפוי בתמורה לעבודה איכותית.
-    תמיד תוכלו למצוא זול יותר, 
-    אבל אנחנו מאוד תחרותיים ומשאירים לכם מספיק מרחב לנשימה ול..רווחים.
-
-              </p> */}
-              {/* NEW */}
+              <h3 className='text-xl'>כל אתר סיפור</h3>
               <p className="max-w-sm pt-1 text-lg">
-                אין מחירים כאלו עם איכות כזו.
+                יש לנו אג׳נדה. אנחנו רוצים שכל אתר תדמית שאנחנו בונים יספר את הסיפור של העסק בצורה הכי מדויקת והכי טובה.
               </p>
             </div>
 
