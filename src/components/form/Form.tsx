@@ -122,7 +122,7 @@ export default function Form() {
             </FormTextField>
             <br />
             <FormTextField>
-              לחלופין, מוזמנים לפנות אלינו באמצעות המייל: boris@forweb.co.il
+              לחלופין, מוזמנים לפנות אלינו באמצעות המייל: boristofu@gmail.co.il
             </FormTextField>
             <FormTextField>
               במידה ואינכם בטוחים בסוג החבילה לה אתם זקוקים, או שתרצו לשאול ולהתייעץ בכל דבר הקשור לפתרונות דיגיטל לעסק שלכם, מוזמנים לפנות להתייעצות.
