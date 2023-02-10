@@ -78,7 +78,7 @@ export default function Seo(props?: SeoProps) {
       <meta name="robots" content={meta.robots} />
       <meta name="description" content={meta.description} />
       <meta property='og:url' content={meta.url} />
-      <meta name="image" property='og:image' content="https://forweb.co.il/images/hero.png" />
+      <meta name="image" property='og:image' content="https://forweb.co.il/images/forweb-og.jpg" />
 
       <meta name="facebook:site" content="Forweb" />
       <meta name="facebook:type" content={meta.type} />

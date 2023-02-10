@@ -68,8 +68,6 @@ export default function Header() {
     setOpen(!open);
   } 
 
-
-
   const originalVariation = () => (
     NavbarData.links.map((item, i) => {
       return i === 1
@@ -92,14 +90,19 @@ export default function Header() {
   )
 
   return (
-    <header className='navbar sm:justify-between grid lg:justify-center lg:h-32 lg:my-0'>
+    <header className='navbar sm:justify-between lg:grid lg:justify-center lg:h-32 lg:my-0'>
         {/* This is Desktop view */}
         <div className='hidden lg:flex lg:max-w-5xl items-center'>
           { originalVariation() }
         </div>
 
       {/* This Is Mobile  */}
-      <nav className="flex flex-wrap items-center justify-between w-full py-4 lg:py-0 px-4 text-lg text-gray-700 bg-transparent">
+      <nav className="
+        flex 
+        flex-wrap 
+        items-center 
+        justify-between 
+        w-full py-4 lg:py-0 px-4 text-lg text-gray-700 bg-transparent">
         <HamburgerMenu clickHandler={clickHandler} cx="block lg:hidden cursor-pointer" />
         <div className="lg:hidden">
           <Image 
@@ -114,10 +117,6 @@ export default function Header() {
           className={clsxm(
             'lg:hidden',
             'duration-300 overflow-hidden transition-max-height max-h-0 hover:transition-max-height hover:duration-200',
-            'bg-gradient-to-b',
-            'from-white',
-            'via-primary-100/100',
-            'to-primary-300/5',
             [ !open && 'hidden' || 'animate-fadeIn max-h-72' ],
             "w-full md:flex md:items-center md:w-auto"
         )}>
@@ -125,7 +124,7 @@ export default function Header() {
             {
               NavbarData.links.map(item => (
                 <li key={item.label} className="py-2">
-                  <NavbarItem onClickHandler={clickHandler} cx="md:p-4 py-2 block hover:text-bg-primary-500" href={item.href}>{item.label}</NavbarItem>
+                  <NavbarItem onClickHandler={clickHandler} cx="md:p-4 py-2 block hover:text-bg-primary-200 hover:underline" href={item.href}>{item.label}</NavbarItem>
                 </li>
               ))
             }
