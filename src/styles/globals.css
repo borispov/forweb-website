@@ -236,6 +236,23 @@
   }
 }
 
+.hero-title {
+  background: linear-gradient(228.28deg, rgba(242, 146, 63, 0.33) 33.44%, #A934F1 52.85%), #F7C75F;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+
+  text-align: center;
+  letter-spacing: -0.1em;
+  -webkit-text-stroke-width: 1.8px;
+  -webkit-text-stroke-color: #000;
+
+  font-family:"Helvetica";
+  text-shadow: 
+    -1px 1px 159px #000,
+    0 -4px 9px rgba(0,0,0,0.08);
+}
 
 .services {
   background: linear-gradient(180deg, rgba(255, 182, 175, 0) 0%, #FFFFFF 100%);
