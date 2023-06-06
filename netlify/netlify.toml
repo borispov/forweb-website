@@ -1,0 +1,6 @@
+[[redirects]]
+  from = "/new"
+  to = "https://delicate-dasik-c7768d.netlify.app/"
+  status = 301
+  force = true 
+  headers = {X-From = "Netlify"}
